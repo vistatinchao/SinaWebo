@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  SinaWebo
+//
+//  Created by mac on 2016/11/14.
+//  Copyright © 2016年 United Network Services Ltd. of Shenzhen City. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+/* Custorm NSLog */
+#ifdef DEBUG
+#define ZCLog(...) NSLog(__VA_ARGS__)
+#else
+#define ZCLog(...)
+#endif
+
+/* 包含的头文件 */
+#import "UIView+ZCExtension.h"
+#import "NSString+ZCExtension.h"
+#import "UIBarButtonItem+ZCExtension.h"
+#import "ZCConst.h"
+
+/* 常用的宏 */
+
+#define ZCLogFunc ZCLog(@"%s",__func__)
+#define ZCNotiCenter [NSNotificationCenter defaultCenter]
+#define ZCRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define ZCScreenW [UIScreen mainScreen].bounds.size.width
+#define ZCScreenH [UIScreen mainScreen].bounds.size.height
+#define ZCScreenF [UIScreen mainScreen].bounds
+
+
+#endif /* PrefixHeader_pch */

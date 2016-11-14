@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04EF94641DD9546500E65FE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94631DD9546500E65FE5 /* main.m */; };
-		04EF94671DD9546500E65FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94661DD9546500E65FE5 /* AppDelegate.m */; };
-		04EF946A1DD9546500E65FE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94691DD9546500E65FE5 /* ViewController.m */; };
-		04EF946D1DD9546500E65FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946B1DD9546500E65FE5 /* Main.storyboard */; };
 		04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946E1DD9546500E65FE5 /* Assets.xcassets */; };
 		04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */; };
 		04EF947D1DD9546500E65FE5 /* SinaWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF947C1DD9546500E65FE5 /* SinaWeboTests.m */; };
 		04EF94881DD9546500E65FE5 /* SinaWeboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94871DD9546500E65FE5 /* SinaWeboUITests.m */; };
+		04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94A91DD9606F00E65FE5 /* AppDelegate.m */; };
+		04EF94BD1DD9606F00E65FE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94AA1DD9606F00E65FE5 /* main.m */; };
+		04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94C01DD9648500E65FE5 /* ZCTabBarViewController.m */; };
+		04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94C31DD964B600E65FE5 /* ZCNavigationController.m */; };
+		04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94C61DD965A700E65FE5 /* NSString+ZCExtension.m */; };
+		04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94C91DD9663100E65FE5 /* UIView+ZCExtension.m */; };
+		04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94CC1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m */; };
+		04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94CF1DD96A4200E65FE5 /* ZCConst.m */; };
+		04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94D21DD9A5AD00E65FE5 /* ZCHomeViewController.m */; };
+		04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94D51DD9A5C600E65FE5 /* ZCMessageViewController.m */; };
+		04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94D81DD9A5DF00E65FE5 /* ZCProfileViewController.m */; };
+		04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DB1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m */; };
+		04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */; };
+		C40D58194DFEDE81FC569471 /* libPods-SinaWebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +46,6 @@
 
 /* Begin PBXFileReference section */
 		04EF945F1DD9546500E65FE5 /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04EF94631DD9546500E65FE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		04EF94651DD9546500E65FE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		04EF94661DD9546500E65FE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04EF94681DD9546500E65FE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04EF94691DD9546500E65FE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04EF946C1DD9546500E65FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04EF946E1DD9546500E65FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EF94711DD9546500E65FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EF94731DD9546500E65FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +55,35 @@
 		04EF94831DD9546500E65FE5 /* SinaWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinaWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF94871DD9546500E65FE5 /* SinaWeboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinaWeboUITests.m; sourceTree = "<group>"; };
 		04EF94891DD9546500E65FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EF94A81DD9606F00E65FE5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04EF94A91DD9606F00E65FE5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04EF94AA1DD9606F00E65FE5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04EF94BE1DD9621E00E65FE5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		04EF94BF1DD9648500E65FE5 /* ZCTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTabBarViewController.h; sourceTree = "<group>"; };
+		04EF94C01DD9648500E65FE5 /* ZCTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTabBarViewController.m; sourceTree = "<group>"; };
+		04EF94C21DD964B600E65FE5 /* ZCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNavigationController.h; sourceTree = "<group>"; };
+		04EF94C31DD964B600E65FE5 /* ZCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNavigationController.m; sourceTree = "<group>"; };
+		04EF94C51DD965A700E65FE5 /* NSString+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZCExtension.h"; sourceTree = "<group>"; };
+		04EF94C61DD965A700E65FE5 /* NSString+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZCExtension.m"; sourceTree = "<group>"; };
+		04EF94C81DD9663100E65FE5 /* UIView+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZCExtension.h"; sourceTree = "<group>"; };
+		04EF94C91DD9663100E65FE5 /* UIView+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZCExtension.m"; sourceTree = "<group>"; };
+		04EF94CB1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZCExtension.h"; sourceTree = "<group>"; };
+		04EF94CC1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZCExtension.m"; sourceTree = "<group>"; };
+		04EF94CE1DD96A4200E65FE5 /* ZCConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCConst.h; sourceTree = "<group>"; };
+		04EF94CF1DD96A4200E65FE5 /* ZCConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCConst.m; sourceTree = "<group>"; };
+		04EF94D11DD9A5AD00E65FE5 /* ZCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCHomeViewController.h; sourceTree = "<group>"; };
+		04EF94D21DD9A5AD00E65FE5 /* ZCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCHomeViewController.m; sourceTree = "<group>"; };
+		04EF94D41DD9A5C600E65FE5 /* ZCMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMessageViewController.h; sourceTree = "<group>"; };
+		04EF94D51DD9A5C600E65FE5 /* ZCMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMessageViewController.m; sourceTree = "<group>"; };
+		04EF94D71DD9A5DF00E65FE5 /* ZCProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCProfileViewController.h; sourceTree = "<group>"; };
+		04EF94D81DD9A5DF00E65FE5 /* ZCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCProfileViewController.m; sourceTree = "<group>"; };
+		04EF94DA1DD9A5ED00E65FE5 /* ZCDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDiscoverViewController.h; sourceTree = "<group>"; };
+		04EF94DB1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDiscoverViewController.m; sourceTree = "<group>"; };
+		04EF94DD1DD9B4F000E65FE5 /* ZCTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTextViewController.h; sourceTree = "<group>"; };
+		04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextViewController.m; sourceTree = "<group>"; };
+		3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SinaWebo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB90215D3DF9BA14DC32A9A /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
+		CE902A01F370151776EC9509 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40D58194DFEDE81FC569471 /* libPods-SinaWebo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +119,8 @@
 				04EF947B1DD9546500E65FE5 /* SinaWeboTests */,
 				04EF94861DD9546500E65FE5 /* SinaWeboUITests */,
 				04EF94601DD9546500E65FE5 /* Products */,
+				9BC8B4DFDC393D83985A2ADF /* Pods */,
+				9A099610CA5407678C93836F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +137,7 @@
 		04EF94611DD9546500E65FE5 /* SinaWebo */ = {
 			isa = PBXGroup;
 			children = (
-				04EF94651DD9546500E65FE5 /* AppDelegate.h */,
-				04EF94661DD9546500E65FE5 /* AppDelegate.m */,
-				04EF94681DD9546500E65FE5 /* ViewController.h */,
-				04EF94691DD9546500E65FE5 /* ViewController.m */,
-				04EF946B1DD9546500E65FE5 /* Main.storyboard */,
-				04EF946E1DD9546500E65FE5 /* Assets.xcassets */,
-				04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */,
-				04EF94731DD9546500E65FE5 /* Info.plist */,
+				04EF94951DD9606F00E65FE5 /* Classes */,
 				04EF94621DD9546500E65FE5 /* Supporting Files */,
 			);
 			path = SinaWebo;
@@ -117,7 +146,10 @@
 		04EF94621DD9546500E65FE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04EF94631DD9546500E65FE5 /* main.m */,
+				04EF946E1DD9546500E65FE5 /* Assets.xcassets */,
+				04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */,
+				04EF94731DD9546500E65FE5 /* Info.plist */,
+				04EF94BE1DD9621E00E65FE5 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +172,335 @@
 			path = SinaWeboUITests;
 			sourceTree = "<group>";
 		};
+		04EF94951DD9606F00E65FE5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94961DD9606F00E65FE5 /* Compose(发微博) */,
+				04EF949A1DD9606F00E65FE5 /* Discover(发现) */,
+				04EF949E1DD9606F00E65FE5 /* Home(首页) */,
+				04EF94A21DD9606F00E65FE5 /* Main */,
+				04EF94AC1DD9606F00E65FE5 /* MessageCenter(消息) */,
+				04EF94B01DD9606F00E65FE5 /* Newfeature(新特性) */,
+				04EF94B41DD9606F00E65FE5 /* OAuth(授权) */,
+				04EF94B81DD9606F00E65FE5 /* Profile(我) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04EF94961DD9606F00E65FE5 /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94971DD9606F00E65FE5 /* Controller */,
+				04EF94981DD9606F00E65FE5 /* Model */,
+				04EF94991DD9606F00E65FE5 /* View */,
+			);
+			path = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		04EF94971DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94981DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94991DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF949A1DD9606F00E65FE5 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF949B1DD9606F00E65FE5 /* Controller */,
+				04EF949C1DD9606F00E65FE5 /* Model */,
+				04EF949D1DD9606F00E65FE5 /* View */,
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		04EF949B1DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94DA1DD9A5ED00E65FE5 /* ZCDiscoverViewController.h */,
+				04EF94DB1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF949C1DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF949D1DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF949E1DD9606F00E65FE5 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF949F1DD9606F00E65FE5 /* Controller */,
+				04EF94A01DD9606F00E65FE5 /* Model */,
+				04EF94A11DD9606F00E65FE5 /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		04EF949F1DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94D11DD9A5AD00E65FE5 /* ZCHomeViewController.h */,
+				04EF94D21DD9A5AD00E65FE5 /* ZCHomeViewController.m */,
+				04EF94DD1DD9B4F000E65FE5 /* ZCTextViewController.h */,
+				04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94A01DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94A11DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF94A21DD9606F00E65FE5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94A31DD9606F00E65FE5 /* Category */,
+				04EF94A41DD9606F00E65FE5 /* Controller */,
+				04EF94A51DD9606F00E65FE5 /* Lib */,
+				04EF94A61DD9606F00E65FE5 /* Model */,
+				04EF94A71DD9606F00E65FE5 /* Other */,
+				04EF94AB1DD9606F00E65FE5 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04EF94A31DD9606F00E65FE5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94C51DD965A700E65FE5 /* NSString+ZCExtension.h */,
+				04EF94C61DD965A700E65FE5 /* NSString+ZCExtension.m */,
+				04EF94C81DD9663100E65FE5 /* UIView+ZCExtension.h */,
+				04EF94C91DD9663100E65FE5 /* UIView+ZCExtension.m */,
+				04EF94CB1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.h */,
+				04EF94CC1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		04EF94A41DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94BF1DD9648500E65FE5 /* ZCTabBarViewController.h */,
+				04EF94C01DD9648500E65FE5 /* ZCTabBarViewController.m */,
+				04EF94C21DD964B600E65FE5 /* ZCNavigationController.h */,
+				04EF94C31DD964B600E65FE5 /* ZCNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94A51DD9606F00E65FE5 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		04EF94A61DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94A71DD9606F00E65FE5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94A81DD9606F00E65FE5 /* AppDelegate.h */,
+				04EF94A91DD9606F00E65FE5 /* AppDelegate.m */,
+				04EF94AA1DD9606F00E65FE5 /* main.m */,
+				04EF94CE1DD96A4200E65FE5 /* ZCConst.h */,
+				04EF94CF1DD96A4200E65FE5 /* ZCConst.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		04EF94AB1DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF94AC1DD9606F00E65FE5 /* MessageCenter(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94AD1DD9606F00E65FE5 /* Controller */,
+				04EF94AE1DD9606F00E65FE5 /* Model */,
+				04EF94AF1DD9606F00E65FE5 /* View */,
+			);
+			path = "MessageCenter(消息)";
+			sourceTree = "<group>";
+		};
+		04EF94AD1DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94D41DD9A5C600E65FE5 /* ZCMessageViewController.h */,
+				04EF94D51DD9A5C600E65FE5 /* ZCMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94AE1DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94AF1DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF94B01DD9606F00E65FE5 /* Newfeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94B11DD9606F00E65FE5 /* Controller */,
+				04EF94B21DD9606F00E65FE5 /* Model */,
+				04EF94B31DD9606F00E65FE5 /* View */,
+			);
+			path = "Newfeature(新特性)";
+			sourceTree = "<group>";
+		};
+		04EF94B11DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94B21DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94B31DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF94B41DD9606F00E65FE5 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94B51DD9606F00E65FE5 /* Controller */,
+				04EF94B61DD9606F00E65FE5 /* Model */,
+				04EF94B71DD9606F00E65FE5 /* View */,
+			);
+			path = "OAuth(授权)";
+			sourceTree = "<group>";
+		};
+		04EF94B51DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94B61DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94B71DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04EF94B81DD9606F00E65FE5 /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94B91DD9606F00E65FE5 /* Controller */,
+				04EF94BA1DD9606F00E65FE5 /* Model */,
+				04EF94BB1DD9606F00E65FE5 /* View */,
+			);
+			path = "Profile(我)";
+			sourceTree = "<group>";
+		};
+		04EF94B91DD9606F00E65FE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF94D71DD9A5DF00E65FE5 /* ZCProfileViewController.h */,
+				04EF94D81DD9A5DF00E65FE5 /* ZCProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF94BA1DD9606F00E65FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04EF94BB1DD9606F00E65FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A099610CA5407678C93836F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BC8B4DFDC393D83985A2ADF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBB90215D3DF9BA14DC32A9A /* Pods-SinaWebo.debug.xcconfig */,
+				CE902A01F370151776EC9509 /* Pods-SinaWebo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +508,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04EF948C1DD9546500E65FE5 /* Build configuration list for PBXNativeTarget "SinaWebo" */;
 			buildPhases = (
+				A9D02028CFCA470FE73B4D01 /* [CP] Check Pods Manifest.lock */,
 				04EF945B1DD9546500E65FE5 /* Sources */,
 				04EF945C1DD9546500E65FE5 /* Frameworks */,
 				04EF945D1DD9546500E65FE5 /* Resources */,
+				E3361105761D1AF92F248B1B /* [CP] Embed Pods Frameworks */,
+				3B7A3C64A8C82FD49A92FC2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +566,7 @@
 		04EF94571DD9546400E65FE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZC;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "United Network Services Ltd. of Shenzhen City";
 				TargetAttributes = {
@@ -251,7 +616,6 @@
 			files = (
 				04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */,
 				04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */,
-				04EF946D1DD9546500E65FE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,14 +635,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B7A3C64A8C82FD49A92FC2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9D02028CFCA470FE73B4D01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3361105761D1AF92F248B1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04EF945B1DD9546500E65FE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EF946A1DD9546500E65FE5 /* ViewController.m in Sources */,
-				04EF94671DD9546500E65FE5 /* AppDelegate.m in Sources */,
-				04EF94641DD9546500E65FE5 /* main.m in Sources */,
+				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
+				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
+				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
+				04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */,
+				04EF94BD1DD9606F00E65FE5 /* main.m in Sources */,
+				04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */,
+				04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */,
+				04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */,
+				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
+				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
+				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,
+				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
+				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +736,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04EF946B1DD9546500E65FE5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04EF946C1DD9546500E65FE5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -373,7 +787,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +828,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -423,10 +837,15 @@
 		};
 		04EF948D1DD9546500E65FE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB90215D3DF9BA14DC32A9A /* Pods-SinaWebo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = G4E6298X77;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,10 +854,15 @@
 		};
 		04EF948E1DD9546500E65FE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE902A01F370151776EC9509 /* Pods-SinaWebo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = G4E6298X77;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +938,7 @@
 				04EF948E1DD9546500E65FE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04EF948F1DD9546500E65FE5 /* Build configuration list for PBXNativeTarget "SinaWeboTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +947,7 @@
 				04EF94911DD9546500E65FE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04EF94921DD9546500E65FE5 /* Build configuration list for PBXNativeTarget "SinaWeboUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +956,7 @@
 				04EF94941DD9546500E65FE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
