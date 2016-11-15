@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
 		04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946E1DD9546500E65FE5 /* Assets.xcassets */; };
 		04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */; };
 		04EF947D1DD9546500E65FE5 /* SinaWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF947C1DD9546500E65FE5 /* SinaWeboTests.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
+		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
 		04EF945F1DD9546500E65FE5 /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF946E1DD9546500E65FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EF94711DD9546500E65FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 		04EF94AB1DD9606F00E65FE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */,
+				047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */,
 				04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */,
 				04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */,
+				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
 				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
 				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
 				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,

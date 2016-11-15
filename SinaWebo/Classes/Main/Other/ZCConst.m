@@ -6,8 +6,10 @@
 //  Copyright © 2016年 United Network Services Ltd. of Shenzhen City. All rights reserved.
 //
 
-#import "ZCConst.h"
+#import <UIKit/UIKit.h>
 
-@implementation ZCConst
-
-@end
+/**
+ 设置searchBar
+ */
+CGFloat const ZCSearchBarHeight= 30;
+CGFloat const ZCSearchBarFont = 15;

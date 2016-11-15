@@ -40,7 +40,6 @@
 
 - (void)addChildViewController:(UIViewController *)childController title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
-    childController.view.backgroundColor = ZCRGBColor(200, 200, 200);
     childController.navigationItem.title = title;
     childController.tabBarItem.image = [UIImage imageNamed:image];
     childController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

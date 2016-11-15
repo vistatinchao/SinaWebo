@@ -14,15 +14,25 @@
 
 @implementation ZCNavigationController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
++ (void)initialize
+{
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+
+    NSMutableDictionary *textAttr = [NSMutableDictionary dictionary];
+    textAttr[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    textAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    [item setTitleTextAttributes:textAttr forState:UIControlStateNormal];
+
+    NSMutableDictionary *textAttrDisable = [NSMutableDictionary dictionary];
+    textAttrDisable[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    textAttrDisable[NSForegroundColorAttributeName] = [ZCRGBColor(153, 153, 153) colorWithAlphaComponent:0.7];
+    [item setTitleTextAttributes:textAttrDisable forState:UIControlStateDisabled];
+
+
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-
-    ZCLog(@"%zd",self.viewControllers.count);
     if (self.viewControllers.count>0) {
 
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_back" HighLightenImage:@"navigationbar_back_highlighted" Action:@selector(back) Target:self];

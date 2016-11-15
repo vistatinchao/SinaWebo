@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZCConst : NSObject
+/**
+   设置searchBar
+ */
+UIKIT_EXTERN CGFloat const ZCSearchBarHeight;
+UIKIT_EXTERN CGFloat const ZCSearchBarFont;
 
-@end
