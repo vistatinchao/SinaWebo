@@ -30,6 +30,6 @@
 #define ZCScreenW [UIScreen mainScreen].bounds.size.width
 #define ZCScreenH [UIScreen mainScreen].bounds.size.height
 #define ZCScreenF [UIScreen mainScreen].bounds
-
+#define ZCLastWindow [UIApplication sharedApplication].windows.lastObject
 
 #endif /* PrefixHeader_pch */

@@ -25,6 +25,8 @@
 		04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94D81DD9A5DF00E65FE5 /* ZCProfileViewController.m */; };
 		04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DB1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m */; };
 		04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */; };
+		7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */; };
+		7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */; };
 		C40D58194DFEDE81FC569471 /* libPods-SinaWebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,10 @@
 		04EF94DD1DD9B4F000E65FE5 /* ZCTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTextViewController.h; sourceTree = "<group>"; };
 		04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextViewController.m; sourceTree = "<group>"; };
 		3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SinaWebo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A9F9B4F1DDB5174006FF9CF /* ZCDrawDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDrawDownMenu.h; sourceTree = "<group>"; };
+		7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDrawDownMenu.m; sourceTree = "<group>"; };
+		7A9F9B521DDB610B006FF9CF /* ZCHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCHomeTitleButton.h; path = SinaWebo/Classes/Main/View/ZCHomeTitleButton.h; sourceTree = SOURCE_ROOT; };
+		7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCHomeTitleButton.m; path = SinaWebo/Classes/Main/View/ZCHomeTitleButton.m; sourceTree = SOURCE_ROOT; };
 		CBB90215D3DF9BA14DC32A9A /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		CE902A01F370151776EC9509 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +291,8 @@
 		04EF94A11DD9606F00E65FE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A9F9B521DDB610B006FF9CF /* ZCHomeTitleButton.h */,
+				7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +365,8 @@
 			children = (
 				047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */,
 				047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */,
+				7A9F9B4F1DDB5174006FF9CF /* ZCDrawDownMenu.h */,
+				7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -695,6 +705,7 @@
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
 				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
+				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
 				04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */,
 				04EF94BD1DD9606F00E65FE5 /* main.m in Sources */,
@@ -702,6 +713,7 @@
 				04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */,
 				04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */,
 				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
+				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,
 				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
 				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
 				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,
