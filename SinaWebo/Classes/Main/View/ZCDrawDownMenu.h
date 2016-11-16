@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ZCDrawDownMenu;
+@protocol DrawDownMenuDelegate <NSObject>
+@optional
+- (void)drawDownMenuDismiss:(ZCDrawDownMenu *)menu;
+- (void)drawDownMenuShow:(ZCDrawDownMenu *)menu;
+@end
 @interface ZCDrawDownMenu : UIView
 
 @property (nonatomic,weak)UIView *contentView;// 显示的内容
 @property (nonatomic,strong)UIViewController *contentViewController;//显示内容的控制器
+@property (nonatomic,weak)id<DrawDownMenuDelegate>delegate;
 +(instancetype)menu; 
 
 - (void)showFromView:(UIView *)fromView;

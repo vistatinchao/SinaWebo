@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B54A01DDC156C0042BC76 /* ZCTabBar.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
 		04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946E1DD9546500E65FE5 /* Assets.xcassets */; };
 		04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041B549F1DDC156C0042BC76 /* ZCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTabBar.h; sourceTree = "<group>"; };
+		041B54A01DDC156C0042BC76 /* ZCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTabBar.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
 		04EF945F1DD9546500E65FE5 /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +370,8 @@
 				047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */,
 				7A9F9B4F1DDB5174006FF9CF /* ZCDrawDownMenu.h */,
 				7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */,
+				041B549F1DDC156C0042BC76 /* ZCTabBar.h */,
+				041B54A01DDC156C0042BC76 /* ZCTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
 				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
+				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
 				04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */,

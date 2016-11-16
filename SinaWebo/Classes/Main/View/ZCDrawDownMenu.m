@@ -76,6 +76,9 @@
 - (void)dismiss
 {
     [self removeFromSuperview];
+    if ([self.delegate respondsToSelector:@selector(drawDownMenuDismiss:)]) {
+        [self.delegate drawDownMenuDismiss:self];
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

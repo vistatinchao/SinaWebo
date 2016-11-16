@@ -26,9 +26,10 @@
 - (void)setAttribute
 {
     [self setTitle:@"首页" forState:UIControlStateNormal];
+    self.titleLabel.font = [UIFont systemFontOfSize:17];
     [self setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [self setImage:[UIImage imageNamed:@"timeline_icon_more"] forState:UIControlStateNormal];
-    [self setImage:[UIImage imageNamed:@"timeline_icon_more_highlighted"] forState:UIControlStateHighlighted];
+    [self setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [self setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
 }
 
 @end

@@ -10,8 +10,8 @@
 #import "ZCTextViewController.h"
 #import "ZCDrawDownMenu.h"
 #import "ZCHomeTitleButton.h"
-@interface ZCHomeViewController ()
-
+@interface ZCHomeViewController ()<DrawDownMenuDelegate>
+@property (nonatomic,weak)ZCHomeTitleButton *titleBtn;
 @end
 
 @implementation ZCHomeViewController
@@ -20,7 +20,7 @@
     [super viewDidLoad];
     [self setupNav];
 }
-
+#pragma mark 设置导航栏内容
 - (void)setupNav
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_friendsearch" HighLightenImage:@"navigationbar_friendsearch_highlighted" Action:@selector(friendSearch) Target:self];
@@ -33,33 +33,53 @@
     button.height = 40;
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 30)];
+    self.titleBtn = button;
 }
 
-- (void)showMenu:(UIButton *)btn
+#pragma mark 监听首页按钮点击
+- (void)showMenu:(ZCHomeTitleButton *)btn
 {
-    ZCLogFunc;
+    // 显示menu
     ZCDrawDownMenu *menu = [ZCDrawDownMenu menu];
+    menu.delegate = self;
     [menu showFromView:btn];
     UIView *view = [[UIView alloc]init];
     view.frame = CGRectMake(0, 0, 200, 300);
     view.backgroundColor = [UIColor redColor];
     menu.contentView = view;
-    
+    // 更换btn状态
+    [self drawDownMenuShow:menu];
+}
+
+
+#pragma mark DrawDownMenuDelegate
+
+/**
+    menu Dismiss
+ */
+- (void)drawDownMenuDismiss:(ZCDrawDownMenu *)menu
+{
+    self.titleBtn.selected = NO;
+}
+
+/**
+ menu Show
+ */
+- (void)drawDownMenuShow:(ZCDrawDownMenu *)menu
+{
+    self.titleBtn.selected = YES;
 }
 
 - (void)friendSearch
 {
-    ZCLogFunc;
+
 }
 
 - (void)pop
 {
-    ZCLogFunc;
+ 
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.navigationController pushViewController:[ZCTextViewController new] animated:YES];
-}
+
 
 @end

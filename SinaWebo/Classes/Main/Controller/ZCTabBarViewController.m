@@ -12,14 +12,30 @@
 #import "ZCDiscoverViewController.h"
 #import "ZCProfileViewController.h"
 #import "ZCNavigationController.h"
+#import "ZCTabBar.h"
 @interface ZCTabBarViewController ()
 
 @end
 
 @implementation ZCTabBarViewController
 
+
++ (void)initialize
+{
+    NSMutableDictionary *attributeDict = [NSMutableDictionary dictionary];
+    attributeDict[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:attributeDict forState:UIControlStateSelected];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addChildViewController];
+    [self setTabBar];
+}
+
+- (void)addChildViewController
+{
     ZCHomeViewController *home = [[ZCHomeViewController alloc]init];
     ZCMessageViewController *message = [[ZCMessageViewController alloc]init];
     ZCDiscoverViewController *discover = [[ZCDiscoverViewController alloc]init];
@@ -31,13 +47,10 @@
 
 }
 
-+ (void)initialize
+- (void)setTabBar
 {
-    NSMutableDictionary *attributeDict = [NSMutableDictionary dictionary];
-    attributeDict[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    [[UITabBarItem appearance] setTitleTextAttributes:attributeDict forState:UIControlStateSelected];
+    [self setValue:[[ZCTabBar alloc]init] forKey:@"tabBar"];
 }
-
 - (void)addChildViewController:(UIViewController *)childController title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     childController.navigationItem.title = title;
