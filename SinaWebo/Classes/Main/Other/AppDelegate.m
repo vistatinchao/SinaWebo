@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ZCTabBarViewController.h"
+#import "ZCNewFeatureViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,8 +27,17 @@
 {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    ZCTabBarViewController *tbc = [[ZCTabBarViewController alloc]init];
-    self.window.rootViewController  = tbc;
+    NSString *readVersion = [ZCUtility readFileForKey:ZCCFBundleShortVersionStringKey];
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+    if ([readVersion isEqualToString:currentVersion]) {
+        ZCTabBarViewController *tbc = [[ZCTabBarViewController alloc]init];
+        self.window.rootViewController  = tbc;
+    }else{
+         self.window.rootViewController  = [[ZCNewFeatureViewController alloc]init];
+        [ZCUtility writeToFile:currentVersion forKey:ZCCFBundleShortVersionStringKey];
+    }
+
+
     [self.window makeKeyAndVisible];
 }
 

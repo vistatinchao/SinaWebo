@@ -13,3 +13,4 @@
  */
 CGFloat const ZCSearchBarHeight= 30;
 CGFloat const ZCSearchBarFont = 15;
+NSString *const ZCCFBundleShortVersionStringKey = @"CFBundleShortVersionString";

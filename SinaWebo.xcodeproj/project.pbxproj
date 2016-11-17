@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B54A01DDC156C0042BC76 /* ZCTabBar.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
+		04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */; };
+		04D317781DDD9387008FE97C /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317771DDD9387008FE97C /* ZCUtility.m */; };
 		04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946E1DD9546500E65FE5 /* Assets.xcassets */; };
 		04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */; };
 		04EF947D1DD9546500E65FE5 /* SinaWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF947C1DD9546500E65FE5 /* SinaWeboTests.m */; };
@@ -53,6 +55,10 @@
 		041B54A01DDC156C0042BC76 /* ZCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTabBar.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
+		04D317731DDD8A6E008FE97C /* ZCNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNewFeatureViewController.h; sourceTree = "<group>"; };
+		04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNewFeatureViewController.m; sourceTree = "<group>"; };
+		04D317761DDD9387008FE97C /* ZCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCUtility.h; path = "SinaWebo/Classes/Newfeature(新特性)/Controller/ZCUtility.h"; sourceTree = SOURCE_ROOT; };
+		04D317771DDD9387008FE97C /* ZCUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCUtility.m; path = "SinaWebo/Classes/Newfeature(新特性)/Controller/ZCUtility.m"; sourceTree = SOURCE_ROOT; };
 		04EF945F1DD9546500E65FE5 /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF946E1DD9546500E65FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EF94711DD9546500E65FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -305,7 +311,7 @@
 			children = (
 				04EF94A31DD9606F00E65FE5 /* Category */,
 				04EF94A41DD9606F00E65FE5 /* Controller */,
-				04EF94A51DD9606F00E65FE5 /* Lib */,
+				04EF94A51DD9606F00E65FE5 /* Tool */,
 				04EF94A61DD9606F00E65FE5 /* Model */,
 				04EF94A71DD9606F00E65FE5 /* Other */,
 				04EF94AB1DD9606F00E65FE5 /* View */,
@@ -337,10 +343,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		04EF94A51DD9606F00E65FE5 /* Lib */ = {
+		04EF94A51DD9606F00E65FE5 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				04D317761DDD9387008FE97C /* ZCUtility.h */,
+				04D317771DDD9387008FE97C /* ZCUtility.m */,
 			);
+			name = Tool;
 			path = Lib;
 			sourceTree = "<group>";
 		};
@@ -422,6 +431,8 @@
 		04EF94B11DD9606F00E65FE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04D317731DDD8A6E008FE97C /* ZCNewFeatureViewController.h */,
+				04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -713,6 +724,7 @@
 				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
+				04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */,
 				04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */,
 				04EF94BD1DD9606F00E65FE5 /* main.m in Sources */,
 				04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */,
@@ -725,6 +737,7 @@
 				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,
 				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
 				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
+				04D317781DDD9387008FE97C /* ZCUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
