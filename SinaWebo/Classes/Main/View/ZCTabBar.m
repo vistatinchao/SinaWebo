@@ -36,8 +36,7 @@
 
 - (void)postMessage
 {
-    ZCOAuthViewController *vc = [[ZCOAuthViewController alloc]init];
-    [ZCLastWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+   
 }
 - (void)layoutSubviews
 {

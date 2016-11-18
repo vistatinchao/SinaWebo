@@ -19,7 +19,7 @@
         ZCTabBarViewController *tbc = [[ZCTabBarViewController alloc]init];
         self.rootViewController  = tbc;
     }else{
-        self.window.rootViewController  = [[ZCNewFeatureViewController alloc]init];
+        self.rootViewController  = [[ZCNewFeatureViewController alloc]init];
         [ZCUtility writeToFile:currentVersion forKey:ZCCFBundleShortVersionStringKey];
     }
 }

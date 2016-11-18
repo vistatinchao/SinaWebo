@@ -23,8 +23,9 @@
 {
     UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:webView];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=1988294129&redirect_uri=http://"]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=1988294129&redirect_uri=http://www.baidu.com"]]];
     webView.delegate = self;
+    self.webView = webView;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -52,38 +53,49 @@
 {
     ZCUserAccount *user = [ZCUtility readUserAccount];
     if (user) {
+        [ZCLastWindow chooseRootViewController];
         return;
     }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"client_id"] = @"1988294129";
     params[@"client_secret"] = @"263a43f9b7511a222bfbfdfd2bdfdc82";
     params[@"grant_type"] = @"authorization_code";
-    params[@"redirect_uri"] = @"http://";
+    params[@"redirect_uri"] = @"http://www.baidu.com";
     params[@"code"] = code;
     [AFHTTPResponseSerializer serializer];
     [[AFHTTPSessionManager manager]POST:@"https://api.weibo.com/oauth2/access_token" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ZCLog(@"%@",responseObject);
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideHUDForView:ZCLastWindow];
         ZCUserAccount *user = [ZCUserAccount userAccountWithDictionary:responseObject];
         // 存储user
         [ZCUtility saveUserAccount:user];
         // 切换窗口的根控制器
         [ZCLastWindow chooseRootViewController];
+
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideHUDForView:ZCLastWindow];
+        ZCLog(@"%@",error);
     }];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    ZCLogFunc;
     [MBProgressHUD showMessage:@"正在加载"];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [MBProgressHUD hideHUD];
+    ZCLogFunc;
+    [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].windows.lastObject];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    [MBProgressHUD hideHUD];
+    ZCLogFunc;
+    [MBProgressHUD hideHUDForView:ZCLastWindow];
+}
+
+- (void)dealloc
+{
+    ZCLogFunc;
 }
 @end
