@@ -7,6 +7,7 @@
 //
 
 #import "ZCTabBar.h"
+#import "ZCOAuthViewController.h"
 @interface ZCTabBar()
 @property (nonatomic,weak)UIButton *addBtn;
 @end
@@ -35,8 +36,7 @@
 
 - (void)postMessage
 {
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = [UIColor redColor];
+    ZCOAuthViewController *vc = [[ZCOAuthViewController alloc]init];
     [ZCLastWindow.rootViewController presentViewController:vc animated:YES completion:nil];
 }
 - (void)layoutSubviews

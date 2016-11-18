@@ -7,7 +7,7 @@
 //
 
 #import "ZCUtility.h"
-
+#define Path [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.archive"]
 @implementation ZCUtility
 
 + (void)writeToFile:(id)object forKey:(NSString *)key
@@ -22,5 +22,13 @@
     return [[NSUserDefaults standardUserDefaults]objectForKey:key];
 }
 
++(void)saveUserAccount:(ZCUserAccount *)user
+{
+    [NSKeyedArchiver archiveRootObject:user toFile:Path];
+}
 
++(ZCUserAccount *)readUserAccount
+{
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:Path];
+}
 @end

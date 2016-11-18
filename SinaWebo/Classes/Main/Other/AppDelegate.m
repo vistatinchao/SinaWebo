@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZCTabBarViewController.h"
-#import "ZCNewFeatureViewController.h"
+#import "ZCOAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,19 +25,15 @@
 
 - (void)initWindow
 {
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [[UIWindow alloc]initWithFrame:ZCScreenF];
     self.window.backgroundColor = [UIColor whiteColor];
-    NSString *readVersion = [ZCUtility readFileForKey:ZCCFBundleShortVersionStringKey];
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-    if ([readVersion isEqualToString:currentVersion]) {
-        ZCTabBarViewController *tbc = [[ZCTabBarViewController alloc]init];
-        self.window.rootViewController  = tbc;
+    // 判断用户是否授权
+    ZCUserAccount *user = [ZCUtility readUserAccount];
+    if (user) { // 授权过
+        [self.window chooseRootViewController];
     }else{
-         self.window.rootViewController  = [[ZCNewFeatureViewController alloc]init];
-        [ZCUtility writeToFile:currentVersion forKey:ZCCFBundleShortVersionStringKey];
+        self.window.rootViewController = [[ZCOAuthViewController alloc]init];
     }
-
-
     [self.window makeKeyAndVisible];
 }
 

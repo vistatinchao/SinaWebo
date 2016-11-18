@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ZCUserAccount;
 @interface ZCUtility : NSObject
 
 + (void)writeToFile:(id)object forKey:(NSString *)key;
 
 + (id)readFileForKey:(NSString *)key;
 
++ (void)saveUserAccount:(ZCUserAccount *)user;
++ (ZCUserAccount *)readUserAccount;
 @end
