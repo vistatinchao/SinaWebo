@@ -7,7 +7,7 @@
 //
 
 #import "ZCTabBar.h"
-#import "ZCOAuthViewController.h"
+
 @interface ZCTabBar()
 @property (nonatomic,weak)UIButton *addBtn;
 @end

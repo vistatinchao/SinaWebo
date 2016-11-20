@@ -29,6 +29,15 @@
 
 +(ZCUserAccount *)readUserAccount
 {
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:Path];
+    ZCUserAccount *user = [NSKeyedUnarchiver unarchiveObjectWithFile:Path];
+    
+    long long expired_time = user.expires_in.longLongValue;
+    NSDate *date = [user.create_time dateByAddingTimeInterval:expired_time];
+    NSDate *now = [NSDate date];
+    NSComparisonResult result = [date compare:now];
+    if (result!=NSOrderedDescending) {  //过期
+        return nil;
+    }
+    return user;
 }
 @end

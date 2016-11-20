@@ -17,13 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+ MBProgressHUD *hud =   [MBProgressHUD showHUDAddedTo animated:YES];
+    hud.label.text = @"loading";
+    
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

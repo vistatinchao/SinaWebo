@@ -72,7 +72,8 @@
 
 - (void)friendSearch
 {
-
+    ZCTextViewController *text = [[ZCTextViewController alloc]init];
+    [self.navigationController pushViewController:text animated:YES];
 }
 
 - (void)pop
