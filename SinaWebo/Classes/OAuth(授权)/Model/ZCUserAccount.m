@@ -27,6 +27,7 @@
         self.access_token = [aDecoder decodeObjectForKey:@"access_token"];
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
         self.create_time = [aDecoder decodeObjectForKey:@"create_time"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
     }
     return self;
 }
@@ -37,5 +38,6 @@
     [aCoder encodeObject:self.access_token forKey:@"access_token"];
     [aCoder encodeObject:self.expires_in forKey:@"expires_in"];
     [aCoder encodeObject:self.create_time forKey:@"create_time"];
+    [aCoder encodeObject:self.name forKey:@"name"];
 }
 @end

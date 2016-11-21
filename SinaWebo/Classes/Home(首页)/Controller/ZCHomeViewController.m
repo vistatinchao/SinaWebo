@@ -11,29 +11,56 @@
 #import "ZCDrawDownMenu.h"
 #import "ZCHomeTitleButton.h"
 @interface ZCHomeViewController ()<DrawDownMenuDelegate>
-@property (nonatomic,weak)ZCHomeTitleButton *titleBtn;
+@property (nonatomic,strong)ZCHomeTitleButton *titleBtn;
 @end
 
 @implementation ZCHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self requestData];
     [self setupNav];
 }
+
+- (void)requestData
+{
+    ZCUserAccount *user = [ZCUtility readUserAccount];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = user.access_token;
+    params[@"uid"] = user.uid;
+    [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+        ZCLog(@"%@",responseObject);
+        user.name = responseObject[@"name"];
+        // 更新沙盒
+        [ZCUtility saveUserAccount:user];
+        // 设置tileView
+        self.navigationItem.titleView = self.titleBtn;
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        ZCLog(@"%@",error);
+    }];
+}
+
+
+
+
+
 #pragma mark 设置导航栏内容
 - (void)setupNav
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_friendsearch" HighLightenImage:@"navigationbar_friendsearch_highlighted" Action:@selector(friendSearch) Target:self];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImage:@"navigationbar_pop" HighLightenImage:@"navigationbar_pop_highlighted" Action:@selector(pop) Target:self];
-    // 设置tileView
-    ZCHomeTitleButton *button = [ZCHomeTitleButton titleButton];
-    self.navigationItem.titleView = button;
-    [button addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
-    button.width = 100;
-    button.height = 40;
-    [button setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
-    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 30)];
-    self.titleBtn = button;
+
+
+}
+
+- (ZCHomeTitleButton *)titleBtn
+{
+    if (!_titleBtn) {
+        ZCHomeTitleButton *titleBtn = [[ZCHomeTitleButton alloc]init];
+        _titleBtn = titleBtn;
+        [_titleBtn addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _titleBtn;
 }
 
 #pragma mark 监听首页按钮点击

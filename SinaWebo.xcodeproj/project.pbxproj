@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B54A01DDC156C0042BC76 /* ZCTabBar.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
+		04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */; };
+		04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */; };
+		04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */; };
 		04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */; };
-		04D317781DDD9387008FE97C /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317771DDD9387008FE97C /* ZCUtility.m */; };
 		04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */; };
 		04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */; };
 		04D73C111DDEFB1200517C0A /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */; };
@@ -59,10 +61,13 @@
 		041B54A01DDC156C0042BC76 /* ZCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTabBar.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
+		04C7F2431DE2CAC70095C1E4 /* ZCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUtility.h; sourceTree = "<group>"; };
+		04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCUtility.m; sourceTree = "<group>"; };
+		04C7F2461DE2CC000095C1E4 /* ZCAFHttpsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCAFHttpsRequest.h; sourceTree = "<group>"; };
+		04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCAFHttpsRequest.m; sourceTree = "<group>"; };
+		04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		04D317731DDD8A6E008FE97C /* ZCNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNewFeatureViewController.h; sourceTree = "<group>"; };
 		04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNewFeatureViewController.m; sourceTree = "<group>"; };
-		04D317761DDD9387008FE97C /* ZCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCUtility.h; path = "SinaWebo/Classes/Newfeature(新特性)/Controller/ZCUtility.h"; sourceTree = SOURCE_ROOT; };
-		04D317771DDD9387008FE97C /* ZCUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCUtility.m; path = "SinaWebo/Classes/Newfeature(新特性)/Controller/ZCUtility.m"; sourceTree = SOURCE_ROOT; };
 		04D73C061DDEA89200517C0A /* ZCOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCOAuthViewController.h; sourceTree = "<group>"; };
 		04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCOAuthViewController.m; sourceTree = "<group>"; };
 		04D73C091DDEF5D100517C0A /* UIWindow+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ZCExtension.h"; sourceTree = "<group>"; };
@@ -142,6 +147,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C7F2421DE2CAC70095C1E4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				04C7F2431DE2CAC70095C1E4 /* ZCUtility.h */,
+				04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */,
+				04C7F2461DE2CC000095C1E4 /* ZCAFHttpsRequest.h */,
+				04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		04EF94561DD9546400E65FE5 = {
 			isa = PBXGroup;
 			children = (
@@ -321,9 +337,9 @@
 		04EF94A21DD9606F00E65FE5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04C7F2421DE2CAC70095C1E4 /* Tool */,
 				04EF94A31DD9606F00E65FE5 /* Category */,
 				04EF94A41DD9606F00E65FE5 /* Controller */,
-				04EF94A51DD9606F00E65FE5 /* Tool */,
 				04EF94A61DD9606F00E65FE5 /* Model */,
 				04EF94A71DD9606F00E65FE5 /* Other */,
 				04EF94AB1DD9606F00E65FE5 /* View */,
@@ -334,6 +350,7 @@
 		04EF94A31DD9606F00E65FE5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */,
 				04D73C0F1DDEFB1200517C0A /* MBProgressHUD+MJ.h */,
 				04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */,
 				04EF94C51DD965A700E65FE5 /* NSString+ZCExtension.h */,
@@ -357,16 +374,6 @@
 				04EF94C31DD964B600E65FE5 /* ZCNavigationController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		04EF94A51DD9606F00E65FE5 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				04D317761DDD9387008FE97C /* ZCUtility.h */,
-				04D317771DDD9387008FE97C /* ZCUtility.m */,
-			);
-			name = Tool;
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		04EF94A61DD9606F00E65FE5 /* Model */ = {
@@ -623,7 +630,7 @@
 				TargetAttributes = {
 					04EF945E1DD9546500E65FE5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = WUYCY47JX4;
+						DevelopmentTeam = G4E6298X77;
 						ProvisioningStyle = Automatic;
 					};
 					04EF94771DD9546500E65FE5 = {
@@ -740,8 +747,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
+				04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */,
 				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
 				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
+				04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
 				04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */,
@@ -751,6 +760,7 @@
 				04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */,
 				04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */,
 				04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */,
+				04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */,
 				04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */,
 				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,
@@ -761,7 +771,6 @@
 				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
 				7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */,
 				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
-				04D317781DDD9387008FE97C /* ZCUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WUYCY47JX4;
+				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
@@ -919,7 +928,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WUYCY47JX4;
+				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;

@@ -24,9 +24,11 @@
 #import "ZCConst.h"
 #import "ZCUtility.h"
 #import "ZCUserAccount.h"
+#import "ZCAFHttpsRequest.h"
 #import <AFNetworking.h>
 #import "MBProgressHUD+MJ.h"
 #import <MBProgressHUD.h>
+
 
 /* 常用的宏 */
 
