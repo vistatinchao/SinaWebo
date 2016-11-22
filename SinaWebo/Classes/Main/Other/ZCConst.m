@@ -13,4 +13,12 @@
  */
 CGFloat const ZCSearchBarHeight= 30;
 CGFloat const ZCSearchBarFont = 15;
+
+/**
+ newfeature
+ */
 NSString *const ZCCFBundleShortVersionStringKey = @"CFBundleShortVersionString";
+/**
+ 首页
+ */
+CGFloat const ZCHomeTitleBtnMargin = 5;

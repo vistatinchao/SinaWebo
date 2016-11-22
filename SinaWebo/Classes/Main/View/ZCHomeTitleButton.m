@@ -35,7 +35,7 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    frame.size.width += 5;
+    frame.size.width += ZCHomeTitleBtnMargin;
     [super setFrame:frame];
 }
 
@@ -45,7 +45,7 @@
     // 如果仅仅是调整按钮内部titleLabel和imageView的位置，那么在layoutSubviews中单独设置位置即可
 
     // 1.计算titleLabel的frame
-    self.titleLabel.x = 5;
+    self.titleLabel.x = ZCHomeTitleBtnMargin;
 
     // 2.计算imageView的frame
     self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + 5;

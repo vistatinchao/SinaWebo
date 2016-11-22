@@ -28,6 +28,9 @@
 #import <AFNetworking.h>
 #import "MBProgressHUD+MJ.h"
 #import <MBProgressHUD.h>
+#import <MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import <MJRefresh.h>
 
 
 /* 常用的宏 */
@@ -39,5 +42,7 @@
 #define ZCScreenH [UIScreen mainScreen].bounds.size.height
 #define ZCScreenF [UIScreen mainScreen].bounds
 #define ZCLastWindow [UIApplication sharedApplication].keyWindow
+#define ZCNavBarHeight 64
+#define ZCTabBarHeight 49
 
 #endif /* PrefixHeader_pch */

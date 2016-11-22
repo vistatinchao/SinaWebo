@@ -18,3 +18,7 @@ UIKIT_EXTERN CGFloat const ZCSearchBarFont;
  newfeature
  */
 UIKIT_EXTERN NSString *const ZCCFBundleShortVersionStringKey;
+/**
+ 首页
+ */
+UIKIT_EXTERN CGFloat const ZCHomeTitleBtnMargin;

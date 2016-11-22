@@ -16,6 +16,8 @@
 		04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */; };
 		04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */; };
 		04D73C111DDEFB1200517C0A /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */; };
+		04D963FB1DE3E5FF00B3BE74 /* ZCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D963FA1DE3E5FF00B3BE74 /* ZCUser.m */; };
+		04D963FE1DE3E62100B3BE74 /* ZCStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D963FD1DE3E62100B3BE74 /* ZCStatus.m */; };
 		04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EF946E1DD9546500E65FE5 /* Assets.xcassets */; };
 		04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */; };
 		04EF947D1DD9546500E65FE5 /* SinaWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF947C1DD9546500E65FE5 /* SinaWeboTests.m */; };
@@ -74,6 +76,10 @@
 		04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+ZCExtension.m"; sourceTree = "<group>"; };
 		04D73C0F1DDEFB1200517C0A /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		04D963F91DE3E5FF00B3BE74 /* ZCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUser.h; sourceTree = "<group>"; };
+		04D963FA1DE3E5FF00B3BE74 /* ZCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCUser.m; sourceTree = "<group>"; };
+		04D963FC1DE3E62100B3BE74 /* ZCStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatus.h; sourceTree = "<group>"; };
+		04D963FD1DE3E62100B3BE74 /* ZCStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatus.m; sourceTree = "<group>"; };
 		04EF945F1DD9546500E65FE5 /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF946E1DD9546500E65FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EF94711DD9546500E65FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -321,6 +327,10 @@
 		04EF94A01DD9606F00E65FE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04D963F91DE3E5FF00B3BE74 /* ZCUser.h */,
+				04D963FA1DE3E5FF00B3BE74 /* ZCUser.m */,
+				04D963FC1DE3E62100B3BE74 /* ZCStatus.h */,
+				04D963FD1DE3E62100B3BE74 /* ZCStatus.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -759,6 +769,7 @@
 				04EF94BD1DD9606F00E65FE5 /* main.m in Sources */,
 				04EF94CD1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m in Sources */,
 				04EF94C71DD965A700E65FE5 /* NSString+ZCExtension.m in Sources */,
+				04D963FB1DE3E5FF00B3BE74 /* ZCUser.m in Sources */,
 				04EF94C11DD9648500E65FE5 /* ZCTabBarViewController.m in Sources */,
 				04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */,
 				04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */,
@@ -767,6 +778,7 @@
 				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
 				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
 				04D73C111DDEFB1200517C0A /* MBProgressHUD+MJ.m in Sources */,
+				04D963FE1DE3E62100B3BE74 /* ZCStatus.m in Sources */,
 				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,
 				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
 				7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */,
