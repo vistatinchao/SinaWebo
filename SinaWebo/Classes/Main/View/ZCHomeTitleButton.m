@@ -16,7 +16,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setAttribute];
-
     }
     return self;
 }
@@ -30,14 +29,14 @@
     [self setTitle:title forState:UIControlStateNormal];
     [self setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [self setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
-
+    self.width+=2*ZCHomeTitleBtnMargin;
 }
 
-- (void)setFrame:(CGRect)frame
-{
-    frame.size.width += ZCHomeTitleBtnMargin;
-    [super setFrame:frame];
-}
+//- (void)setFrame:(CGRect)frame
+//{
+//    frame.size.width += ZCHomeTitleBtnMargin;
+//    [super setFrame:frame];
+//}
 
 - (void)layoutSubviews
 {
@@ -48,7 +47,8 @@
     self.titleLabel.x = ZCHomeTitleBtnMargin;
 
     // 2.计算imageView的frame
-    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + 5;
+    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + ZCHomeTitleBtnMargin;
+
 }
 
 

@@ -19,8 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initWindow];
+    [self registerNoticeType];
+
     return YES;
 }
+
 
 - (void)initWindow
 {
@@ -35,6 +38,22 @@
     }
     [self.window makeKeyAndVisible];
 }
+
+#pragma mark 注册通知
+- (void)registerNoticeType
+{
+    UIUserNotificationType myType =  UIUserNotificationTypeBadge| UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySetting = [UIUserNotificationSettings settingsForTypes:myType categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySetting];
+}
+#pragma mark 应用程序进入后台默认定时器暂停
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    __block UIBackgroundTaskIdentifier task = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:task];
+    }];
+}
+
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {

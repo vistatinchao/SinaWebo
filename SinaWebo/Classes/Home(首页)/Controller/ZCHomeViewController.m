@@ -25,6 +25,7 @@ static NSString *const cellID = @"statusCell";
     [self requestUserData];
     [self setupNav];
     [self initTableView];
+    [self showUnReadStatusCount];
 }
 
 #pragma mark 加载tableview
@@ -102,6 +103,9 @@ static NSString *const cellID = @"statusCell";
 
 - (void)shouNewStatusCount:(NSInteger)totalIndex
 {
+    // 清空未读
+    self.tabBarItem.badgeValue = nil;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     UILabel *label = [[UILabel alloc]init];
     [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
     label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
@@ -126,7 +130,51 @@ static NSString *const cellID = @"statusCell";
 #pragma mark 上拉
 - (void)loadMoreStatusData
 {
+    ZCUserAccount *userAccount = [ZCUtility readUserAccount];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = userAccount.access_token;
+    ZCStatus *status = self.statuses.lastObject;
+    if (status) {
+        long long maxId = status.idstr.longLongValue - 1;
+        params[@"max_id"] = @(maxId);
+    }
+    [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSMutableArray *newStatus = [ZCStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        [self.statuses addObjectsFromArray:newStatus];
+        [self.tableView reloadData];
+        [self.tableView.mj_footer endRefreshing];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        ZCLog(@"%@",error);
+        [self.tableView.mj_footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+    }];
 
+}
+
+#pragma mark showUnReadStatusCount
+
+- (void)showUnReadStatusCount
+{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showBadgeValue) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)showBadgeValue
+{
+    ZCLogFunc;
+    ZCUserAccount *userAccount = [ZCUtility readUserAccount];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = userAccount.access_token;
+    params[@"uid"] = userAccount.uid;
+
+    [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (![[responseObject[@"status"] description] isEqualToString:@"0"]) {
+            self.tabBarItem.badgeValue = [responseObject[@"status"] description];
+            [UIApplication sharedApplication].applicationIconBadgeNumber = self.tabBarItem.badgeValue.integerValue;
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        ZCLog(@"%@",error);
+    }];
 }
 
 #pragma mark 设置导航栏内容
