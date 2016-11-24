@@ -22,3 +22,9 @@ UIKIT_EXTERN NSString *const ZCCFBundleShortVersionStringKey;
  首页
  */
 UIKIT_EXTERN CGFloat const ZCHomeTitleBtnMargin;
+
+UIKIT_EXTERN CGFloat const ZCStatusCellNameFont;
+UIKIT_EXTERN CGFloat const ZCStatusCellTimeFont;
+UIKIT_EXTERN CGFloat const ZCStatusCellSourceFont;
+UIKIT_EXTERN CGFloat const ZCStatusCellContentFont;
+UIKIT_EXTERN CGFloat const ZCStatusCellMargin;

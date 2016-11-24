@@ -11,10 +11,11 @@
 #import "ZCDrawDownMenu.h"
 #import "ZCHomeTitleButton.h"
 #import "ZCUser.h"
-#import "ZCStatus.h"
+#import "ZCStatusFrame.h"
+#import "ZCStatusCell.h"
 @interface ZCHomeViewController ()<DrawDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)ZCHomeTitleButton *titleBtn;
-@property (nonatomic,strong)NSMutableArray *statuses;
+@property (nonatomic,strong)NSMutableArray *statusesFrames;
 @property (nonatomic,weak)UITableView *tableView;
 @end
 static NSString *const cellID = @"statusCell";
@@ -39,8 +40,8 @@ static NSString *const cellID = @"statusCell";
     tableView.dataSource = self;
     tableView.contentInset = UIEdgeInsetsMake(ZCNavBarHeight, 0, ZCTabBarHeight, 0);
     tableView.scrollIndicatorInsets = tableView.contentInset;
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-    tableView.rowHeight = 100;
+    [tableView registerClass:[ZCStatusCell class] forCellReuseIdentifier:cellID];
+    tableView.backgroundColor = ZCRGBColor(211, 211, 211);
     tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     // 集成上下拉刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewStatusData)];
@@ -72,26 +73,39 @@ static NSString *const cellID = @"statusCell";
         ZCLog(@"%@",error);
     }];
 }
+#pragma mark status模型数组 转成 statusFrame模型数组
+- (NSMutableArray *)statusTurnStatusFrame:(NSArray *)statuses
+{
+    NSMutableArray *statusFrames = [NSMutableArray array];
+    for (ZCStatus *status in statuses) {
+        ZCStatusFrame *frameModel = [[ZCStatusFrame alloc]init];
+        frameModel.status = status;
+        [statusFrames addObject: frameModel];
+    }
+    return statusFrames;
+}
+
 #pragma mark 下拉
 - (void)loadNewStatusData
 {
     ZCUserAccount *userAccount = [ZCUtility readUserAccount];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = userAccount.access_token;
-    ZCStatus *status = self.statuses.firstObject;
-    if (status) {
-        params[@"since_id"] = status.idstr;
+    ZCStatusFrame *statusFrame = self.statusesFrames.firstObject;
+    if (statusFrame) {
+        params[@"since_id"] = statusFrame.status.idstr;
     }
     [[ZCAFHttpsRequest share]GetRequestWithUrl:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *newStatus = [ZCStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-        NSRange range = NSMakeRange(0, newStatus.count);
+        NSArray *newStatusFrames = [self statusTurnStatusFrame:newStatus];
+        NSRange range = NSMakeRange(0, newStatusFrames.count);
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.statuses insertObjects:newStatus atIndexes:indexSet];
+        [self.statusesFrames insertObjects:newStatusFrames atIndexes:indexSet];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         // 刷新成功显示下拉数据
-        [self shouNewStatusCount:newStatus.count];
+        [self shouNewStatusCount:newStatusFrames.count];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self.tableView.mj_header endRefreshing];
@@ -133,14 +147,14 @@ static NSString *const cellID = @"statusCell";
     ZCUserAccount *userAccount = [ZCUtility readUserAccount];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = userAccount.access_token;
-    ZCStatus *status = self.statuses.lastObject;
-    if (status) {
-        long long maxId = status.idstr.longLongValue - 1;
+    ZCStatusFrame *statusFrame = self.statusesFrames.lastObject;
+    if (statusFrame) {
+        long long maxId = statusFrame.status.idstr.longLongValue - 1;
         params[@"max_id"] = @(maxId);
     }
     [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *newStatus = [ZCStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-        [self.statuses addObjectsFromArray:newStatus];
+        [self.statusesFrames addObjectsFromArray:[self statusTurnStatusFrame:newStatus]];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -155,7 +169,7 @@ static NSString *const cellID = @"statusCell";
 
 - (void)showUnReadStatusCount
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showBadgeValue) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:65.0 target:self selector:@selector(showBadgeValue) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
@@ -200,23 +214,32 @@ static NSString *const cellID = @"statusCell";
     // 更换btn状态
     [self drawDownMenuShow:menu];
 }
-#pragma mark tableviewDetasource
+#pragma mark tableviewDetasource && delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.statuses.count;
+    return self.statusesFrames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+   // ZCStatusCell *cell = [[ZCStatusCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+    ZCStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
 
-    ZCStatus *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status.user.name;
-    cell.detailTextLabel.text = status.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:status.user.profile_image_url] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    ZCStatusFrame *statusFrames = self.statusesFrames[indexPath.row];
+
+    cell.statusFrame = statusFrames;
+
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     ZCStatusFrame *statusFrames = self.statusesFrames[indexPath.row];
+
+     return statusFrames.cellHeight;
+}
+
 
 #pragma mark DrawDownMenuDelegate
 
@@ -256,12 +279,12 @@ static NSString *const cellID = @"statusCell";
     }
     return _titleBtn;
 }
--(NSMutableArray *)statuses
+-(NSMutableArray *)statusesFrames
 {
-    if (!_statuses) {
-        _statuses = [NSMutableArray array];
+    if (!_statusesFrames) {
+        _statusesFrames = [NSMutableArray array];
     }
-    return _statuses;
+    return _statusesFrames;
 }
 
 @end
