@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZCPhoto.h"
 @class ZCUser;
 
 @interface ZCStatus : NSObject
@@ -26,7 +27,7 @@
 @property (nonatomic,copy) NSString *source;
 
 /**	微博配图地址。多图时返回多图链接。无配图返回“[]”*/
-@property (nonatomic,strong) NSArray *pic_urls;\
+@property (nonatomic,strong) NSArray *pic_urls;
 
 /**	int	转发数*/
 @property (nonatomic, assign) int reposts_count;

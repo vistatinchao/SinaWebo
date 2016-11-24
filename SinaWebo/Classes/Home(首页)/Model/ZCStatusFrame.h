@@ -25,6 +25,8 @@
 @property (nonatomic,assign)CGRect sourceLabelFrame;
 /** 正文Frame*/
 @property (nonatomic,assign)CGRect contentLabelFrame;
+/** 配图Frame*/
+@property (nonatomic,assign)CGRect photoImageViewFrame;
 /** cell高度*/
 @property (nonatomic,assign)CGFloat cellHeight;
 @end

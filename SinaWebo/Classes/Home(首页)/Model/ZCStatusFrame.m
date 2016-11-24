@@ -59,9 +59,22 @@
     CGFloat contentY = MAX(CGRectGetMaxY(self.iconViewFrame), CGRectGetMaxY(self.timeLabelFrame))+ZCStatusCellMargin;
     CGSize contentSize = [self sizeWithString:status.text maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX) font:[UIFont systemFontOfSize:ZCStatusCellContentFont]];
     self.contentLabelFrame = CGRectMake(contentX, contentY, contentSize.width, contentSize.height);
+    
+    // 配图
+    CGFloat originalViewH = 0;
+    if (status.pic_urls.count) {// 有配图
+        CGFloat photoImageViewX = iconX;
+        CGFloat photoImageViewY = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
+        CGFloat photoImageWH = 100;
+        self.photoImageViewFrame = CGRectMake(photoImageViewX, photoImageViewY, photoImageWH, photoImageWH);
+        originalViewH = CGRectGetMaxY(self.photoImageViewFrame)+ZCStatusCellMargin;
+    }else{
+        originalViewH = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
+    }
+   
 
     // originaView
-    self.originalViewFrame = CGRectMake(0, ZCStatusCellMargin, ZCScreenW, CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin);
+    self.originalViewFrame = CGRectMake(0, ZCStatusCellMargin, ZCScreenW, originalViewH);
     // cell高度
     self.cellHeight = CGRectGetMaxY(self.originalViewFrame);
 

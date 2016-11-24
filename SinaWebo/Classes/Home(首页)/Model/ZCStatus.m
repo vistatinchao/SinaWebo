@@ -10,4 +10,9 @@
 
 @implementation ZCStatus
 
++(NSDictionary *)mj_objectClassInArray
+{
+    return @{@"pic_urls":[ZCPhoto class]};
+}
+
 @end

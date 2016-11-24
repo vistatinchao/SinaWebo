@@ -38,6 +38,7 @@
 		04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94D81DD9A5DF00E65FE5 /* ZCProfileViewController.m */; };
 		04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DB1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m */; };
 		04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */; };
+		7A503D6D1DE72CDA00CD7FC7 /* ZCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A503D6C1DE72CDA00CD7FC7 /* ZCPhoto.m */; };
 		7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */; };
 		7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */; };
 		7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD004D81DDF3C83008948F7 /* ZCUserAccount.m */; };
@@ -126,6 +127,8 @@
 		04EF94DD1DD9B4F000E65FE5 /* ZCTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTextViewController.h; sourceTree = "<group>"; };
 		04EF94DE1DD9B4F000E65FE5 /* ZCTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextViewController.m; sourceTree = "<group>"; };
 		3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SinaWebo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A503D6B1DE72CDA00CD7FC7 /* ZCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPhoto.h; sourceTree = "<group>"; };
+		7A503D6C1DE72CDA00CD7FC7 /* ZCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPhoto.m; sourceTree = "<group>"; };
 		7A9F9B4F1DDB5174006FF9CF /* ZCDrawDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDrawDownMenu.h; sourceTree = "<group>"; };
 		7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDrawDownMenu.m; sourceTree = "<group>"; };
 		7A9F9B521DDB610B006FF9CF /* ZCHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCHomeTitleButton.h; path = SinaWebo/Classes/Main/View/ZCHomeTitleButton.h; sourceTree = SOURCE_ROOT; };
@@ -342,6 +345,8 @@
 				04D963FD1DE3E62100B3BE74 /* ZCStatus.m */,
 				043DE3121DE68803008F4267 /* ZCStatusFrame.h */,
 				043DE3131DE68803008F4267 /* ZCStatusFrame.m */,
+				7A503D6B1DE72CDA00CD7FC7 /* ZCPhoto.h */,
+				7A503D6C1DE72CDA00CD7FC7 /* ZCPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
 				04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
+				7A503D6D1DE72CDA00CD7FC7 /* ZCPhoto.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
 				04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */,
 				04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */,

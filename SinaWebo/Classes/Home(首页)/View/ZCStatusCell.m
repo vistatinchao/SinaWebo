@@ -9,6 +9,7 @@
 #import "ZCStatusCell.h"
 #import "ZCStatusFrame.h"
 #import "ZCUser.h"
+#import "ZCStatusCellToobar.h"
 @interface ZCStatusCell()
 /** 原创微博整体 */
 @property (nonatomic,weak)UIView *originalView;
@@ -24,7 +25,18 @@
 @property (nonatomic,weak)UILabel *sourceLabel;
 /** 正文 */
 @property (nonatomic,weak)UILabel *contentLabel;
+/** 配图 */
+@property (nonatomic,weak)UIImageView *photoImageView;
 
+/** 转发微博整体 */
+@property (nonatomic,weak)UIView *retweetView;
+/** 转发微博内容 */
+@property (nonatomic,weak)UILabel *retweetContentLabel;
+/** 转发微博配图 */
+@property (nonatomic,weak)UIImageView *retweetPhotoImageView;
+
+/** 工具条 */
+@property (nonatomic,weak)ZCStatusCellToobar *toolbarView;
 @end
 
 @implementation ZCStatusCell
@@ -89,6 +101,11 @@
     contentLabel.font = [UIFont systemFontOfSize:ZCStatusCellContentFont];
     contentLabel.numberOfLines = 0;
     self.contentLabel = contentLabel;
+    
+    /** 配图 */
+    UIImageView *photoImageView = [[UIImageView alloc]init];
+    [originalView addSubview:photoImageView];
+    self.photoImageView = photoImageView;
 }
 #pragma mark 转发微博
 - (void)addRetreetView
@@ -126,8 +143,7 @@
     //昵称
     self.nameLabel.frame = statusFrame.nameLabelFrame;
     self.nameLabel.text = user.name;
-
-
+    
     /** 时间 */
     self.timeLabel.frame = statusFrame.timeLabelFrame;
     self.timeLabel.text = statusFrame.status.created_at;
@@ -139,6 +155,23 @@
     /** 正文 */
     self.contentLabel.frame = statusFrame.contentLabelFrame;
     self.contentLabel.text = statusFrame.status.text;
+    /** 配图 */
+    if (statusFrame.status.pic_urls.count) { // 有配图
+        self.photoImageView.hidden = NO;
+        ZCPhoto *photo = statusFrame.status.pic_urls.firstObject;
+        self.photoImageView.frame = statusFrame.photoImageViewFrame;
+        [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    }else{
+        self.photoImageView.hidden = YES;
+    }
 }
 
 @end
+
+
+
+
+
+
+
+

@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-SinaWebo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,12 +37,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0512BD88DD612371EF90311BBFE25938</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1994F5E173C048FC5489A8986719503E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67B265DC390C487F6505A2B4731C3BB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
