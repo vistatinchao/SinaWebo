@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ZCStatus;
 @interface ZCStatusCellToobar : UIView
+@property (nonatomic,strong)ZCStatus *status;
++(instancetype)toolbar;
 
 @end

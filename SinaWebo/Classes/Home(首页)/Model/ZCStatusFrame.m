@@ -68,15 +68,40 @@
         CGFloat photoImageWH = 100;
         self.photoImageViewFrame = CGRectMake(photoImageViewX, photoImageViewY, photoImageWH, photoImageWH);
         originalViewH = CGRectGetMaxY(self.photoImageViewFrame)+ZCStatusCellMargin;
-    }else{
+    }else{// 没有配图
         originalViewH = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
     }
-   
-
     // originaView
     self.originalViewFrame = CGRectMake(0, ZCStatusCellMargin, ZCScreenW, originalViewH);
+
+    //转发微博
+    if (status.retweeted_status) { // 有转发微博
+        CGFloat retweetContentX = ZCStatusCellMargin;
+        CGFloat retweetContentY = ZCStatusCellMargin;
+        NSString *content = [NSString stringWithFormat:@"@%@:%@",user.name,status.text];
+        CGSize retweetConentSize = [self sizeWithString:content maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX) font:[UIFont systemFontOfSize:ZCStatusRetweetContentFont]];
+        self.retweetContentLabelFrame = CGRectMake(retweetContentX, retweetContentY, retweetConentSize.width, retweetConentSize.height);
+        CGFloat retweetViewH = 0;
+        if (status.retweeted_status.pic_urls.count) { // 有转发配图
+            CGFloat retweetPhotoImageX = retweetContentX;
+            CGFloat retweetPhotoImageY = CGRectGetMaxY(self.retweetContentLabelFrame)+ZCStatusCellMargin;
+            CGFloat retweetPhotoImageWH = 100;
+            self.retweetPhotoImageViewFrame = CGRectMake(retweetPhotoImageX, retweetPhotoImageY, retweetPhotoImageWH, retweetPhotoImageWH);
+            retweetViewH = CGRectGetMaxY(self.retweetPhotoImageViewFrame)+ZCStatusCellMargin;
+        }else{// 没有转发配图
+            retweetViewH = CGRectGetMaxY(self.retweetContentLabelFrame)+ZCStatusCellMargin;
+        }
+        // 转发微博整体 retweetViewFrame
+        self.retweetViewFrame = CGRectMake(0, CGRectGetMaxY(self.originalViewFrame), ZCScreenW, retweetViewH);
+        // toolbarFrame
+        self.toolbarFrame = CGRectMake(0, CGRectGetMaxY(self.retweetViewFrame), ZCScreenW, 35);
+
+    }else{
+        // toolbarFrame
+        self.toolbarFrame = CGRectMake(0, CGRectGetMaxY(self.originalViewFrame), ZCScreenW, 35);
+    }
     // cell高度
-    self.cellHeight = CGRectGetMaxY(self.originalViewFrame);
+    self.cellHeight = CGRectGetMaxY(self.toolbarFrame);
 
 }
 

@@ -86,7 +86,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     ZCLogFunc;
-    [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].windows.lastObject];
+    [MBProgressHUD hideHUDForView:ZCLastWindow];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {

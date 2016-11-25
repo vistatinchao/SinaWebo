@@ -27,6 +27,16 @@
 @property (nonatomic,assign)CGRect contentLabelFrame;
 /** 配图Frame*/
 @property (nonatomic,assign)CGRect photoImageViewFrame;
+
+/** 转发微博整体Frame */
+@property (nonatomic,assign)CGRect retweetViewFrame;
+/** 转发微博整体内容 */
+@property (nonatomic,assign)CGRect retweetContentLabelFrame;
+/** 转发微博配图Frame */
+@property (nonatomic,assign)CGRect retweetPhotoImageViewFrame;
+
+/** toolbarFrame */
+@property (nonatomic,assign)CGRect toolbarFrame;
 /** cell高度*/
 @property (nonatomic,assign)CGFloat cellHeight;
 @end

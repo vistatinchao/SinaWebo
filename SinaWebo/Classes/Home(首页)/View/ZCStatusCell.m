@@ -110,18 +110,49 @@
 #pragma mark 转发微博
 - (void)addRetreetView
 {
+    //微博整体 originalView
+    UIView *retweetView = [[UIView alloc]init];
+    [self.contentView addSubview:retweetView];
+    retweetView.backgroundColor = ZCRGBColor(247, 247, 247);
+    self.retweetView = retweetView;
+
+    //昵称
+    UILabel *retweetContentLabel = [[UILabel alloc]init];
+    [retweetView addSubview:retweetContentLabel];
+    retweetContentLabel.font = [UIFont systemFontOfSize:ZCStatusRetweetContentFont];
+    retweetContentLabel.numberOfLines = 0;
+    self.retweetContentLabel = retweetContentLabel;
+
+    /** 配图 */
+    UIImageView *photoImageView = [[UIImageView alloc]init];
+    [retweetView addSubview:photoImageView];
+    self.retweetPhotoImageView = photoImageView;
+
 
 }
 #pragma mark 工具条
 - (void)addToolbarView
 {
-
+    ZCStatusCellToobar *toolbar = [ZCStatusCellToobar toolbar];
+    [self.contentView addSubview:toolbar];
+    self.toolbarView = toolbar;
 }
 #pragma mark 设置子控件数据和frame
 - (void)setStatusFrame:(ZCStatusFrame *)statusFrame
 {
     _statusFrame = statusFrame;
-    ZCUser *user = statusFrame.status.user;
+    // 设置原创微博的数据
+    [self setOriginalViewFrameAndContent:statusFrame];
+    // 设置转发微博的数据
+    [self setRetweetViewFrameAndContent:statusFrame];
+    // 设置toolbar的数据
+    [self setToolbarViewFrameAndContent:statusFrame];
+
+}
+
+- (void)setOriginalViewFrameAndContent:(ZCStatusFrame *)statusFrame
+{
+     ZCUser *user = statusFrame.status.user;
     //原创微博整体 originalView
     self.originalView.frame = statusFrame.originalViewFrame;
 
@@ -130,7 +161,7 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
 
     /** 会员图标 */
-     if (user.isVip) {
+    if (user.isVip) {
         self.vipImageView.hidden = NO;
         self.nameLabel.textColor = [UIColor orangeColor];
         self.vipImageView.frame = statusFrame.vipImageViewFrame;
@@ -143,7 +174,7 @@
     //昵称
     self.nameLabel.frame = statusFrame.nameLabelFrame;
     self.nameLabel.text = user.name;
-    
+
     /** 时间 */
     self.timeLabel.frame = statusFrame.timeLabelFrame;
     self.timeLabel.text = statusFrame.status.created_at;
@@ -164,8 +195,39 @@
     }else{
         self.photoImageView.hidden = YES;
     }
+
 }
 
+- (void)setRetweetViewFrameAndContent:(ZCStatusFrame *)statusFrame
+{
+    ZCStatus *status = statusFrame.status;
+    if (status.retweeted_status) { // 有转发微博
+        self.retweetView.hidden = NO;
+        ZCUser *user = status.user;
+        /**转发微博整体 retweetView */
+        self.retweetView.frame = statusFrame.retweetViewFrame;
+        /** 正文 */
+        self.retweetContentLabel.frame = statusFrame.retweetContentLabelFrame;
+        NSString *content = [NSString stringWithFormat:@"@%@:%@",user.name,status.text];
+        self.retweetContentLabel.text = content;
+        /** 配图 */
+        if (status.retweeted_status.pic_urls.count) { //有配图
+            self.retweetPhotoImageView.hidden = NO;
+            self.retweetPhotoImageView.frame = statusFrame.retweetPhotoImageViewFrame;
+            ZCPhoto *photo = status.retweeted_status.pic_urls.firstObject;
+            [self.retweetPhotoImageView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        }else{// 没有配图
+            self.retweetPhotoImageView.hidden = YES;
+        }
+    }else{  //没有转发微博
+        self.retweetView.hidden = YES;
+    }
+}
+- (void)setToolbarViewFrameAndContent:(ZCStatusFrame *)statusFrame
+{
+    self.toolbarView.status = statusFrame.status;
+    self.toolbarView.frame = statusFrame.toolbarFrame;
+}
 @end
 
 

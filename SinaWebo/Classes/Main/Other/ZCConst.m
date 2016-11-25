@@ -22,8 +22,15 @@ NSString *const ZCCFBundleShortVersionStringKey = @"CFBundleShortVersionString";
  首页
  */
 CGFloat const ZCHomeTitleBtnMargin = 5;
+CGFloat const ZCStatusCellMargin = 10;
+/**
+ 原创微博
+ */
 CGFloat const ZCStatusCellNameFont = 15;
 CGFloat const ZCStatusCellTimeFont = 14;
 CGFloat const ZCStatusCellSourceFont = 14;
 CGFloat const ZCStatusCellContentFont = 13;
-CGFloat const ZCStatusCellMargin = 10;;
+/**
+ 转发微博
+ */
+CGFloat const ZCStatusRetweetContentFont = 13;

@@ -35,4 +35,7 @@
 @property (nonatomic, assign) int comments_count;
 /**	int	表态数*/
 @property (nonatomic, assign) int attitudes_count;
+
+/**	object	retweetModel*/
+@property (nonatomic,strong)ZCStatus *retweeted_status;
 @end
