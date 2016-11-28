@@ -10,4 +10,16 @@
 
 @implementation NSString (ZCExtension)
 
+- (CGSize)stringWithFont:(UIFont *)font
+{
+    return [self stringWithFont:font maxSize:CGSizeZero];
+}
+
+
+- (CGSize)stringWithFont:(UIFont *)font maxSize:(CGSize)maxSize
+{
+    NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
+    attrDict[NSFontAttributeName] = font;
+    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrDict context:nil].size;
+}
 @end

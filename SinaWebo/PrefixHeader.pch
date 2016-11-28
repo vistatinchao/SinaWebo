@@ -20,6 +20,8 @@
 #import "UIView+ZCExtension.h"
 #import "NSString+ZCExtension.h"
 #import "UIWindow+ZCExtension.h"
+#import "NSString+ZCExtension.h"
+#import "NSDate+ZCExtension.h"
 #import "UIBarButtonItem+ZCExtension.h"
 #import "ZCConst.h"
 #import "ZCUtility.h"

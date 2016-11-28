@@ -27,9 +27,9 @@ CGFloat const ZCStatusCellMargin = 10;
  原创微博
  */
 CGFloat const ZCStatusCellNameFont = 15;
-CGFloat const ZCStatusCellTimeFont = 14;
+CGFloat const ZCStatusCellTimeFont = 12;
 CGFloat const ZCStatusCellSourceFont = 14;
-CGFloat const ZCStatusCellContentFont = 13;
+CGFloat const ZCStatusCellContentFont = 15;
 /**
  转发微博
  */

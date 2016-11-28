@@ -9,4 +9,10 @@
 #import <UIKit/UIKit.h>
 @interface NSString (ZCExtension)
 
+/**
+ 根据文字算尺寸
+ */
+- (CGSize)stringWithFont:(UIFont *)font;
+
+- (CGSize)stringWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
 @end

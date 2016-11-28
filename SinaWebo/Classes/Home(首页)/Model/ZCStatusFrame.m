@@ -30,7 +30,7 @@
     // 昵称
     CGFloat nameX = CGRectGetMaxX(self.iconViewFrame)+ZCStatusCellMargin;
     CGFloat nameY = iconY;
-    CGSize nameSize = [self sizeWithString:user.name font:[UIFont systemFontOfSize:ZCStatusCellNameFont]];
+    CGSize nameSize = [user.name stringWithFont:[UIFont systemFontOfSize:ZCStatusCellNameFont]];
     self.nameLabelFrame = CGRectMake(nameX, nameY, nameSize.width, nameSize.height);
 
     // vip
@@ -45,19 +45,20 @@
     // 时间
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(self.nameLabelFrame)+ZCStatusCellMargin;
-    CGSize timeSize = [self sizeWithString:status.created_at font:[UIFont systemFontOfSize:ZCStatusCellTimeFont]];
+    NSString *created_at = status.created_at;
+    CGSize timeSize = [created_at stringWithFont:[UIFont systemFontOfSize:ZCStatusCellTimeFont]];
     self.timeLabelFrame = CGRectMake(timeX, timeY, timeSize.width, timeSize.height);
 
     //来源
     CGFloat sourceX = CGRectGetMaxX(self.timeLabelFrame)+ZCStatusCellMargin;
     CGFloat sourceY = timeY;
-    CGSize sourceSize = [self sizeWithString:status.source font:[UIFont systemFontOfSize:ZCStatusCellSourceFont]];
+    CGSize sourceSize = [status.source stringWithFont:[UIFont systemFontOfSize:ZCStatusCellSourceFont]];
     self.sourceLabelFrame = CGRectMake(sourceX, sourceY, sourceSize.width, sourceSize.height);
 
     // 正文
     CGFloat contentX = iconX;
     CGFloat contentY = MAX(CGRectGetMaxY(self.iconViewFrame), CGRectGetMaxY(self.timeLabelFrame))+ZCStatusCellMargin;
-    CGSize contentSize = [self sizeWithString:status.text maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX) font:[UIFont systemFontOfSize:ZCStatusCellContentFont]];
+    CGSize contentSize = [status.text stringWithFont:[UIFont systemFontOfSize:ZCStatusCellContentFont] maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX)];
     self.contentLabelFrame = CGRectMake(contentX, contentY, contentSize.width, contentSize.height);
     
     // 配图
@@ -79,7 +80,7 @@
         CGFloat retweetContentX = ZCStatusCellMargin;
         CGFloat retweetContentY = ZCStatusCellMargin;
         NSString *content = [NSString stringWithFormat:@"@%@:%@",user.name,status.text];
-        CGSize retweetConentSize = [self sizeWithString:content maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX) font:[UIFont systemFontOfSize:ZCStatusRetweetContentFont]];
+        CGSize retweetConentSize = [content stringWithFont:[UIFont systemFontOfSize:ZCStatusRetweetContentFont] maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX)];
         self.retweetContentLabelFrame = CGRectMake(retweetContentX, retweetContentY, retweetConentSize.width, retweetConentSize.height);
         CGFloat retweetViewH = 0;
         if (status.retweeted_status.pic_urls.count) { // 有转发配图
@@ -105,16 +106,5 @@
 
 }
 
-#pragma mark 根据文字自适应尺寸
-- (CGSize)sizeWithString:(NSString *)string maxSize:(CGSize)maxSize font:(UIFont *)font
-{
-    NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-    attrDict[NSFontAttributeName] = font;
-    return [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrDict context:nil].size;
-}
 
-- (CGSize)sizeWithString:(NSString *)string font:(UIFont *)font
-{
-    return [self sizeWithString:string maxSize:CGSizeZero font:font];
-}
 @end

@@ -86,6 +86,7 @@
     /** 时间 */
     UILabel *timeLabel = [[UILabel alloc]init];
     [originalView addSubview:timeLabel];
+    timeLabel.textColor = [UIColor orangeColor];
     timeLabel.font = [UIFont systemFontOfSize:ZCStatusCellTimeFont];
     self.timeLabel = timeLabel;
 
@@ -176,13 +177,18 @@
     self.nameLabel.text = user.name;
 
     /** 时间 */
-    self.timeLabel.frame = statusFrame.timeLabelFrame;
-    self.timeLabel.text = statusFrame.status.created_at;
+    
+    NSString *created_at  = statusFrame.status.created_at; // 必须重新计算frame ,否则会导致时间的字体还是以前的，会显示不全
+    CGSize timeSize = [created_at stringWithFont:[UIFont systemFontOfSize:ZCStatusCellTimeFont]];
+    self.timeLabel.size = timeSize;
+    self.timeLabel.x = self.nameLabel.x;
+    self.timeLabel.y = CGRectGetMaxY(self.nameLabel.frame)+ZCStatusCellMargin;
+    self.timeLabel.text = created_at;
 
     /** 来源 */
     self.sourceLabel.frame = statusFrame.sourceLabelFrame;
     self.sourceLabel.text = statusFrame.status.source;
-
+    self.sourceLabel.x = CGRectGetMaxX(self.timeLabel.frame)+ZCStatusCellMargin; // 更新来源的尺寸
     /** 正文 */
     self.contentLabel.frame = statusFrame.contentLabelFrame;
     self.contentLabel.text = statusFrame.status.text;

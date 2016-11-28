@@ -182,6 +182,7 @@ static NSString *const cellID = @"statusCell";
     params[@"uid"] = userAccount.uid;
 
     [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
         if (![[responseObject[@"status"] description] isEqualToString:@"0"]) {
             self.tabBarItem.badgeValue = [responseObject[@"status"] description];
             [UIApplication sharedApplication].applicationIconBadgeNumber = self.tabBarItem.badgeValue.integerValue;

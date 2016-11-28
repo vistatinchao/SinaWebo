@@ -77,6 +77,7 @@
 - (void)setStatus:(ZCStatus *)status
 {
     _status = status;
+    
     [self setupBtnTitle:self.commentBtn withCount:status.comments_count title:@"评论"];
     [self setupBtnTitle:self.reweetBtn withCount:status.reposts_count title:@"转发"];
     [self setupBtnTitle:self.attitudeBtn withCount:status.attitudes_count title:@"赞"];
@@ -86,8 +87,9 @@
 {
     if (count>0) {
         if (count>=10000) {
-            double wan = count/10000;
+            double wan = count/10000.0;
             title = [NSString stringWithFormat:@"%.lf万+",wan];
+            title = [title stringByReplacingOccurrencesOfString:@".0" withString:@""];
         }else{
             title = [NSString stringWithFormat:@"%zd",count];
         }

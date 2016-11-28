@@ -42,6 +42,7 @@
 		7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */; };
 		7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */; };
 		7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD004D81DDF3C83008948F7 /* ZCUserAccount.m */; };
+		7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE2E851DE9D9610062F019 /* NSDate+ZCExtension.m */; };
 		C40D58194DFEDE81FC569471 /* libPods-SinaWebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3192157EB0638AC2536A1FC4 /* libPods-SinaWebo.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +136,8 @@
 		7A9F9B531DDB610B006FF9CF /* ZCHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCHomeTitleButton.m; path = SinaWebo/Classes/Main/View/ZCHomeTitleButton.m; sourceTree = SOURCE_ROOT; };
 		7AD004D71DDF3C83008948F7 /* ZCUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUserAccount.h; sourceTree = "<group>"; };
 		7AD004D81DDF3C83008948F7 /* ZCUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCUserAccount.m; sourceTree = "<group>"; };
+		7AEE2E841DE9D9610062F019 /* NSDate+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZCExtension.h"; sourceTree = "<group>"; };
+		7AEE2E851DE9D9610062F019 /* NSDate+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZCExtension.m"; sourceTree = "<group>"; };
 		CBB90215D3DF9BA14DC32A9A /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		CE902A01F370151776EC9509 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -391,6 +394,8 @@
 				04EF94CC1DD9694000E65FE5 /* UIBarButtonItem+ZCExtension.m */,
 				04D73C091DDEF5D100517C0A /* UIWindow+ZCExtension.h */,
 				04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */,
+				7AEE2E841DE9D9610062F019 /* NSDate+ZCExtension.h */,
+				7AEE2E851DE9D9610062F019 /* NSDate+ZCExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -660,7 +665,7 @@
 				TargetAttributes = {
 					04EF945E1DD9546500E65FE5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = G4E6298X77;
+						DevelopmentTeam = WUYCY47JX4;
 						ProvisioningStyle = Automatic;
 					};
 					04EF94771DD9546500E65FE5 = {
@@ -795,6 +800,7 @@
 				04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */,
 				04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */,
 				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
+				7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */,
 				043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,
 				043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */,
@@ -947,7 +953,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = WUYCY47JX4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
@@ -964,7 +970,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = WUYCY47JX4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
