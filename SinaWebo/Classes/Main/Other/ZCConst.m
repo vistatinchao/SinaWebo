@@ -34,3 +34,11 @@ CGFloat const ZCStatusCellContentFont = 15;
  转发微博
  */
 CGFloat const ZCStatusRetweetContentFont = 13;
+/**
+ 配图
+ */
+CGFloat const ZCStatusPhotoImageWH = 70;
+/** 最多列数 */
+CGFloat const ZCStatusPhotoesMaxCow = 3;
+/** 最多配图个数 */
+CGFloat const ZCStatusPhotoesMaxCount = 9;

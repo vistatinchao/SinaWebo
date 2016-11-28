@@ -10,6 +10,7 @@
 #import "ZCStatusFrame.h"
 #import "ZCUser.h"
 #import "ZCStatusCellToobar.h"
+#import "ZCStatusPhotoes.h"
 @interface ZCStatusCell()
 /** 原创微博整体 */
 @property (nonatomic,weak)UIView *originalView;
@@ -26,14 +27,14 @@
 /** 正文 */
 @property (nonatomic,weak)UILabel *contentLabel;
 /** 配图 */
-@property (nonatomic,weak)UIImageView *photoImageView;
+@property (nonatomic,weak)ZCStatusPhotoes *photoesView;
 
 /** 转发微博整体 */
 @property (nonatomic,weak)UIView *retweetView;
 /** 转发微博内容 */
 @property (nonatomic,weak)UILabel *retweetContentLabel;
 /** 转发微博配图 */
-@property (nonatomic,weak)UIImageView *retweetPhotoImageView;
+@property (nonatomic,weak)ZCStatusPhotoes *retweetPhotoesView;
 
 /** 工具条 */
 @property (nonatomic,weak)ZCStatusCellToobar *toolbarView;
@@ -104,14 +105,14 @@
     self.contentLabel = contentLabel;
     
     /** 配图 */
-    UIImageView *photoImageView = [[UIImageView alloc]init];
-    [originalView addSubview:photoImageView];
-    self.photoImageView = photoImageView;
+    ZCStatusPhotoes *photoesView = [ZCStatusPhotoes photoes];
+    [originalView addSubview:photoesView];
+    self.photoesView = photoesView;
 }
 #pragma mark 转发微博
 - (void)addRetreetView
 {
-    //微博整体 originalView
+    //微博整体 retweetView
     UIView *retweetView = [[UIView alloc]init];
     [self.contentView addSubview:retweetView];
     retweetView.backgroundColor = ZCRGBColor(247, 247, 247);
@@ -125,9 +126,9 @@
     self.retweetContentLabel = retweetContentLabel;
 
     /** 配图 */
-    UIImageView *photoImageView = [[UIImageView alloc]init];
-    [retweetView addSubview:photoImageView];
-    self.retweetPhotoImageView = photoImageView;
+    ZCStatusPhotoes *photoesView = [ZCStatusPhotoes photoes];
+    [retweetView addSubview:photoesView];
+    self.retweetPhotoesView = photoesView;
 
 
 }
@@ -194,12 +195,12 @@
     self.contentLabel.text = statusFrame.status.text;
     /** 配图 */
     if (statusFrame.status.pic_urls.count) { // 有配图
-        self.photoImageView.hidden = NO;
-        ZCPhoto *photo = statusFrame.status.pic_urls.firstObject;
-        self.photoImageView.frame = statusFrame.photoImageViewFrame;
-        [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        self.photoesView.hidden = NO;
+        self.photoesView.photoes = statusFrame.status.pic_urls;
+        self.photoesView.frame = statusFrame.photoesViewFrame;
+
     }else{
-        self.photoImageView.hidden = YES;
+        self.photoesView.hidden = YES;
     }
 
 }
@@ -218,12 +219,12 @@
         self.retweetContentLabel.text = content;
         /** 配图 */
         if (status.retweeted_status.pic_urls.count) { //有配图
-            self.retweetPhotoImageView.hidden = NO;
-            self.retweetPhotoImageView.frame = statusFrame.retweetPhotoImageViewFrame;
-            ZCPhoto *photo = status.retweeted_status.pic_urls.firstObject;
-            [self.retweetPhotoImageView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+            self.retweetPhotoesView.hidden = NO;
+            self.retweetPhotoesView.frame = statusFrame.retweetPhotoesViewFrame;
+            self.retweetPhotoesView.photoes = status.retweeted_status.pic_urls;
+
         }else{// 没有配图
-            self.retweetPhotoImageView.hidden = YES;
+            self.retweetPhotoesView.hidden = YES;
         }
     }else{  //没有转发微博
         self.retweetView.hidden = YES;

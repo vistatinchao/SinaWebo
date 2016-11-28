@@ -11,6 +11,8 @@
 		043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3131DE68803008F4267 /* ZCStatusFrame.m */; };
 		043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3161DE689A2008F4267 /* ZCStatusCell.m */; };
 		043DE31A1DE6EBCF008F4267 /* ZCStatusCellToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3191DE6EBCF008F4267 /* ZCStatusCellToobar.m */; };
+		04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */; };
+		04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
 		04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */; };
 		04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */; };
@@ -72,6 +74,10 @@
 		043DE3161DE689A2008F4267 /* ZCStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusCell.m; sourceTree = "<group>"; };
 		043DE3181DE6EBCF008F4267 /* ZCStatusCellToobar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatusCellToobar.h; sourceTree = "<group>"; };
 		043DE3191DE6EBCF008F4267 /* ZCStatusCellToobar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusCellToobar.m; sourceTree = "<group>"; };
+		04539C831DEBD0BC00DE1C89 /* ZCStatusPhotoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatusPhotoes.h; sourceTree = "<group>"; };
+		04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusPhotoes.m; sourceTree = "<group>"; };
+		04539C861DEC309B00DE1C89 /* ZCPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPhotoImageView.h; sourceTree = "<group>"; };
+		04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPhotoImageView.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
 		04C7F2431DE2CAC70095C1E4 /* ZCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUtility.h; sourceTree = "<group>"; };
@@ -363,6 +369,10 @@
 				043DE3161DE689A2008F4267 /* ZCStatusCell.m */,
 				043DE3181DE6EBCF008F4267 /* ZCStatusCellToobar.h */,
 				043DE3191DE6EBCF008F4267 /* ZCStatusCellToobar.m */,
+				04539C831DEBD0BC00DE1C89 /* ZCStatusPhotoes.h */,
+				04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */,
+				04539C861DEC309B00DE1C89 /* ZCPhotoImageView.h */,
+				04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,7 +675,7 @@
 				TargetAttributes = {
 					04EF945E1DD9546500E65FE5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = WUYCY47JX4;
+						DevelopmentTeam = G4E6298X77;
 						ProvisioningStyle = Automatic;
 					};
 					04EF94771DD9546500E65FE5 = {
@@ -800,10 +810,12 @@
 				04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */,
 				04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */,
 				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
+				04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */,
 				7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */,
 				043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,
 				043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */,
+				04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */,
 				043DE31A1DE6EBCF008F4267 /* ZCStatusCellToobar.m in Sources */,
 				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
 				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
@@ -953,7 +965,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WUYCY47JX4;
+				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
@@ -970,7 +982,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WUYCY47JX4;
+				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
 				INFOPLIST_FILE = SinaWebo/Info.plist;

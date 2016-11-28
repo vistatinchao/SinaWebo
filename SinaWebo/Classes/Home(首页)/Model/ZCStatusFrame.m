@@ -8,6 +8,7 @@
 
 #import "ZCStatusFrame.h"
 #import "ZCUser.h"
+#import "ZCStatusPhotoes.h"
 @implementation ZCStatusFrame
 
 
@@ -63,12 +64,13 @@
     
     // 配图
     CGFloat originalViewH = 0;
-    if (status.pic_urls.count) {// 有配图
-        CGFloat photoImageViewX = iconX;
-        CGFloat photoImageViewY = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
-        CGFloat photoImageWH = 100;
-        self.photoImageViewFrame = CGRectMake(photoImageViewX, photoImageViewY, photoImageWH, photoImageWH);
-        originalViewH = CGRectGetMaxY(self.photoImageViewFrame)+ZCStatusCellMargin;
+    NSInteger count =status.pic_urls.count;
+    if (count) {// 有配图
+        CGFloat photoesViewX = iconX;
+        CGFloat photoesViewY = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
+        CGSize  photoesViewSize = [ZCStatusPhotoes photoesWithPhotoesCount:count];
+        self.photoesViewFrame = CGRectMake(photoesViewX, photoesViewY, photoesViewSize.width, photoesViewSize.height);
+        originalViewH = CGRectGetMaxY(self.photoesViewFrame)+ZCStatusCellMargin;
     }else{// 没有配图
         originalViewH = CGRectGetMaxY(self.contentLabelFrame)+ZCStatusCellMargin;
     }
@@ -83,12 +85,13 @@
         CGSize retweetConentSize = [content stringWithFont:[UIFont systemFontOfSize:ZCStatusRetweetContentFont] maxSize:CGSizeMake(ZCScreenW-2*ZCStatusCellMargin, CGFLOAT_MAX)];
         self.retweetContentLabelFrame = CGRectMake(retweetContentX, retweetContentY, retweetConentSize.width, retweetConentSize.height);
         CGFloat retweetViewH = 0;
-        if (status.retweeted_status.pic_urls.count) { // 有转发配图
-            CGFloat retweetPhotoImageX = retweetContentX;
-            CGFloat retweetPhotoImageY = CGRectGetMaxY(self.retweetContentLabelFrame)+ZCStatusCellMargin;
-            CGFloat retweetPhotoImageWH = 100;
-            self.retweetPhotoImageViewFrame = CGRectMake(retweetPhotoImageX, retweetPhotoImageY, retweetPhotoImageWH, retweetPhotoImageWH);
-            retweetViewH = CGRectGetMaxY(self.retweetPhotoImageViewFrame)+ZCStatusCellMargin;
+        NSInteger count = status.retweeted_status.pic_urls.count;
+        if (count) { // 有转发配图
+            CGFloat retweetPhotoesViewX = retweetContentX;
+            CGFloat retweetPhotoesViewY = CGRectGetMaxY(self.retweetContentLabelFrame)+ZCStatusCellMargin;
+            CGSize retweetPhotoesViewSize = [ZCStatusPhotoes photoesWithPhotoesCount:count];
+            self.retweetPhotoesViewFrame = CGRectMake(retweetPhotoesViewX, retweetPhotoesViewY, retweetPhotoesViewSize.width, retweetPhotoesViewSize.height);
+            retweetViewH = CGRectGetMaxY(self.retweetPhotoesViewFrame)+ZCStatusCellMargin;
         }else{// 没有转发配图
             retweetViewH = CGRectGetMaxY(self.retweetContentLabelFrame)+ZCStatusCellMargin;
         }
@@ -105,6 +108,8 @@
     self.cellHeight = CGRectGetMaxY(self.toolbarFrame);
 
 }
+
+
 
 
 @end

@@ -26,14 +26,14 @@
 /** 正文Frame*/
 @property (nonatomic,assign)CGRect contentLabelFrame;
 /** 配图Frame*/
-@property (nonatomic,assign)CGRect photoImageViewFrame;
+@property (nonatomic,assign)CGRect photoesViewFrame;
 
 /** 转发微博整体Frame */
 @property (nonatomic,assign)CGRect retweetViewFrame;
 /** 转发微博整体内容 */
 @property (nonatomic,assign)CGRect retweetContentLabelFrame;
 /** 转发微博配图Frame */
-@property (nonatomic,assign)CGRect retweetPhotoImageViewFrame;
+@property (nonatomic,assign)CGRect retweetPhotoesViewFrame;
 
 /** toolbarFrame */
 @property (nonatomic,assign)CGRect toolbarFrame;

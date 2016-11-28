@@ -34,3 +34,11 @@ UIKIT_EXTERN CGFloat const ZCStatusCellMargin;
  转发微博
  */
 UIKIT_EXTERN CGFloat const ZCStatusRetweetContentFont;
+/**
+ 配图
+ */
+UIKIT_EXTERN CGFloat const ZCStatusPhotoImageWH;
+/** 最多列数 */
+UIKIT_EXTERN CGFloat const ZCStatusPhotoesMaxCow;
+/** 最多配图个数*/
+UIKIT_EXTERN CGFloat const ZCStatusPhotoesMaxCount;

@@ -154,6 +154,10 @@ static NSString *const cellID = @"statusCell";
     }
     [[ZCAFHttpsRequest share] GetRequestWithUrl:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *newStatus = [ZCStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        if (!newStatus.count) {// 数据加载完毕
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            return ;
+        }
         [self.statusesFrames addObjectsFromArray:[self statusTurnStatusFrame:newStatus]];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
