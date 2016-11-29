@@ -17,7 +17,6 @@ typedef void (^fairureBlock)(NSURLSessionDataTask *task,NSError *error);
 
 - (void)PostRequestWithUrl:(NSString *)url parameters:(id)parameters success:(successBlock)success failure:(fairureBlock)failure;
 
-@property (nonatomic,copy) successBlock success;
-@property (nonatomic,copy) fairureBlock failure;
+
 
 @end

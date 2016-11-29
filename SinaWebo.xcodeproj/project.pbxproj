@@ -11,6 +11,7 @@
 		043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3131DE68803008F4267 /* ZCStatusFrame.m */; };
 		043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3161DE689A2008F4267 /* ZCStatusCell.m */; };
 		043DE31A1DE6EBCF008F4267 /* ZCStatusCellToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3191DE6EBCF008F4267 /* ZCStatusCellToobar.m */; };
+		043F52E81DED7158003764D7 /* ZCIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043F52E71DED7158003764D7 /* ZCIconImageView.m */; };
 		04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */; };
 		04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
@@ -74,6 +75,8 @@
 		043DE3161DE689A2008F4267 /* ZCStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusCell.m; sourceTree = "<group>"; };
 		043DE3181DE6EBCF008F4267 /* ZCStatusCellToobar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatusCellToobar.h; sourceTree = "<group>"; };
 		043DE3191DE6EBCF008F4267 /* ZCStatusCellToobar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusCellToobar.m; sourceTree = "<group>"; };
+		043F52E61DED7158003764D7 /* ZCIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCIconImageView.h; sourceTree = "<group>"; };
+		043F52E71DED7158003764D7 /* ZCIconImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCIconImageView.m; sourceTree = "<group>"; };
 		04539C831DEBD0BC00DE1C89 /* ZCStatusPhotoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatusPhotoes.h; sourceTree = "<group>"; };
 		04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusPhotoes.m; sourceTree = "<group>"; };
 		04539C861DEC309B00DE1C89 /* ZCPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPhotoImageView.h; sourceTree = "<group>"; };
@@ -449,6 +452,8 @@
 				7A9F9B501DDB5174006FF9CF /* ZCDrawDownMenu.m */,
 				041B549F1DDC156C0042BC76 /* ZCTabBar.h */,
 				041B54A01DDC156C0042BC76 /* ZCTabBar.m */,
+				043F52E61DED7158003764D7 /* ZCIconImageView.h */,
+				043F52E71DED7158003764D7 /* ZCIconImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -825,6 +830,7 @@
 				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
 				7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */,
 				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
+				043F52E81DED7158003764D7 /* ZCIconImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

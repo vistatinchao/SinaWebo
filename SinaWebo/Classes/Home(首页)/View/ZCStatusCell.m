@@ -11,11 +11,12 @@
 #import "ZCUser.h"
 #import "ZCStatusCellToobar.h"
 #import "ZCStatusPhotoes.h"
+#import "ZCIconImageView.h"
 @interface ZCStatusCell()
 /** 原创微博整体 */
 @property (nonatomic,weak)UIView *originalView;
 /** 头像 */
-@property (nonatomic,weak)UIImageView *iconImageView;
+@property (nonatomic,weak)ZCIconImageView *iconImageView;
 /** 会员图标 */
 @property (nonatomic,weak)UIImageView *vipImageView;
 /** 昵称 */
@@ -68,7 +69,7 @@
     self.originalView = originalView;
 
     // 头像
-    UIImageView *iconImageView = [[UIImageView alloc]init];
+    ZCIconImageView *iconImageView = [[ZCIconImageView alloc]init];
     [originalView addSubview:iconImageView];
     self.iconImageView = iconImageView;
 
@@ -160,7 +161,7 @@
 
     // 头像
     self.iconImageView.frame = statusFrame.iconViewFrame;
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    self.iconImageView.user = user;
 
     /** 会员图标 */
     if (user.isVip) {
