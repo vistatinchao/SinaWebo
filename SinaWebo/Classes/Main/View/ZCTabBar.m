@@ -7,7 +7,8 @@
 //
 
 #import "ZCTabBar.h"
-
+#import "ZCComposeViewController.h"
+#import "ZCNavigationController.h"
 @interface ZCTabBar()
 @property (nonatomic,weak)UIButton *addBtn;
 @end
@@ -36,7 +37,9 @@
 
 - (void)postMessage
 {
-   
+    ZCComposeViewController *cvc = [[ZCComposeViewController alloc]init];
+    ZCNavigationController *nvc = [[ZCNavigationController alloc]initWithRootViewController:cvc];
+    [ZCLastWindow.rootViewController presentViewController:nvc animated:YES completion:nil];
 }
 - (void)layoutSubviews
 {

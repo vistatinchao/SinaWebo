@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040800361DEE6ECF00E961FF /* ZCComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040800351DEE6ECF00E961FF /* ZCComposeViewController.m */; };
+		040800391DEEB9ED00E961FF /* ZCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040800381DEEB9ED00E961FF /* ZCTextView.m */; };
 		041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B54A01DDC156C0042BC76 /* ZCTabBar.m */; };
 		043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3131DE68803008F4267 /* ZCStatusFrame.m */; };
 		043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE3161DE689A2008F4267 /* ZCStatusCell.m */; };
@@ -67,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040800341DEE6ECF00E961FF /* ZCComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCComposeViewController.h; sourceTree = "<group>"; };
+		040800351DEE6ECF00E961FF /* ZCComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposeViewController.m; sourceTree = "<group>"; };
+		040800371DEEB9ED00E961FF /* ZCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTextView.h; sourceTree = "<group>"; };
+		040800381DEEB9ED00E961FF /* ZCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextView.m; sourceTree = "<group>"; };
 		041B549F1DDC156C0042BC76 /* ZCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTabBar.h; sourceTree = "<group>"; };
 		041B54A01DDC156C0042BC76 /* ZCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTabBar.m; sourceTree = "<group>"; };
 		043DE3121DE68803008F4267 /* ZCStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCStatusFrame.h; sourceTree = "<group>"; };
@@ -276,6 +282,8 @@
 		04EF94971DD9606F00E65FE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				040800341DEE6ECF00E961FF /* ZCComposeViewController.h */,
+				040800351DEE6ECF00E961FF /* ZCComposeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -454,6 +462,8 @@
 				041B54A01DDC156C0042BC76 /* ZCTabBar.m */,
 				043F52E61DED7158003764D7 /* ZCIconImageView.h */,
 				043F52E71DED7158003764D7 /* ZCIconImageView.m */,
+				040800371DEEB9ED00E961FF /* ZCTextView.h */,
+				040800381DEEB9ED00E961FF /* ZCTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -798,6 +808,8 @@
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
 				04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */,
+				040800361DEE6ECF00E961FF /* ZCComposeViewController.m in Sources */,
+				040800391DEEB9ED00E961FF /* ZCTextView.m in Sources */,
 				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
 				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
 				04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */,
