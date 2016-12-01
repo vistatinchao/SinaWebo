@@ -8,8 +8,12 @@
 
 #import "ZCComposeViewController.h"
 #import "ZCTextView.h"
-@interface ZCComposeViewController ()<UITextViewDelegate>
+#import "ZCComposeToolbar.h"
+#import <AVFoundation/AVCaptureDevice.h>
+#import <AVFoundation/AVMediaFormat.h>
+@interface ZCComposeViewController ()<UITextViewDelegate,ZCComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic,weak)ZCTextView *textView;
+@property (nonatomic,weak)ZCComposeToolbar *toolbar;
 @end
 
 @implementation ZCComposeViewController
@@ -19,8 +23,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNav];
     [self setTextView];
+    [self setComposeToolbar];
 }
-
+#pragma mark ZCTextView
 - (void)setTextView
 {
     ZCTextView *textView = [[ZCTextView alloc]initWithFrame:self.view.bounds];
@@ -30,9 +35,24 @@
     textView.placeholder = @"分享些新鲜事吧...";
     textView.placeholderColor = [UIColor redColor];
     textView.delegate = self;
+    textView.alwaysBounceVertical = YES;
+    textView.showsVerticalScrollIndicator = NO;
+    textView.showsHorizontalScrollIndicator = NO;
     self.textView = textView;
 }
-
+#pragma mark ZCComposeToolbar
+- (void)setComposeToolbar
+{
+    ZCComposeToolbar *toolbar = [ZCComposeToolbar toolbar];
+    [self.view addSubview:toolbar];
+    toolbar.height = 44;
+    toolbar.frame = CGRectMake(0, ZCScreenH, ZCScreenW, toolbar.height);
+    toolbar.delegate = self;
+    self.toolbar = toolbar;
+    // 监听键盘
+    [ZCNotiCenter addObserver:self selector:@selector(changeToolbarFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+#pragma mark 导航栏
 - (void)setupNav
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
@@ -64,7 +84,6 @@
         self.navigationItem.title = subTitle;
     }
 }
-
 - (void)cancel
 {
     [self.view endEditing:YES];
@@ -79,10 +98,92 @@
     [[ZCAFHttpsRequest share] PostRequestWithUrl:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-         [MBProgressHUD showSuccess:@"发送失败"];
+        [MBProgressHUD showSuccess:@"发送失败"];
     }];
     [self cancel];
 }
+
+#pragma mark 监听键盘
+/**
+ * 键盘的frame发生改变时调用（显示、隐藏等）
+ */
+- (void)changeToolbarFrame:(NSNotification *)noti
+{
+    CGFloat duration = [noti.userInfo[@"UIKeyboardAnimationDurationUserInfoKey"] floatValue];
+    CGRect keyboardRect = [noti.userInfo[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    // 执行动画
+    [UIView animateWithDuration:duration animations:^{
+        // 工具条的Y值 == 键盘的Y值 - 工具条的高度
+
+        if (keyboardRect.origin.y > self.view.height) { // 键盘的Y值已经远远超过了控制器view的高度
+            self.toolbar.y = self.view.height - self.toolbar.height;
+        } else {
+            self.toolbar.y = keyboardRect.origin.y - self.toolbar.height;
+        }
+    }];
+
+}
+#pragma mark toolbar delegate
+- (void)composeToolbar:(ZCComposeToolbar *)toolbar didClickBtnType:(ZCComposeToolbarBtnType)btnType
+{
+    switch (btnType) {
+        case ZCComposeToolbarBtnCamera:
+            [self openCamera];
+            break;
+        case ZCComposeToolbarBtnPicture:
+            [self openPicture];
+            break;
+        case ZCComposeToolbarBtnMention:
+
+            break;
+        case ZCComposeToolbarBtnTrend:
+
+            break;
+        case ZCComposeToolbarBtnEmotion:
+
+            break;
+
+        default:
+            break;
+    }
+}
+
+- (void)openCamera
+{
+    [self presentCameraOrPicture:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (void)openPicture
+{
+    [self presentCameraOrPicture:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+- (void)presentCameraOrPicture:(UIImagePickerControllerSourceType)sourceType
+{
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied)
+    {
+        //无权限 做一个友好的提示
+        [UIAlertView alertWithShowMessage:@"请您设置允许APP访问您的相机\n设置>隐私>相机"];
+        return ;
+    } else {
+        //调用相机
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            UIImagePickerController *imagePickVC = [[UIImagePickerController alloc]init];
+            imagePickVC.delegate = self;
+            imagePickVC.allowsEditing = YES;
+            imagePickVC.sourceType = sourceType;
+            [self presentViewController:imagePickVC animated:YES completion:nil];
+        }
+    }
+
+}
+
+#pragma mark textView delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark textView delegate
 
 - (void)textViewDidChange:(UITextView *)textView
@@ -90,9 +191,9 @@
     self.navigationItem.rightBarButtonItem.enabled = textView.hasText;
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    [self.textView resignFirstResponder];
-//}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.textView resignFirstResponder];
+}
 
 @end
