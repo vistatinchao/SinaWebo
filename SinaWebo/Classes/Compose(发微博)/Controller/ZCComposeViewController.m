@@ -7,17 +7,22 @@
 //
 
 #import "ZCComposeViewController.h"
-#import "ZCTextView.h"
-#import "ZCComposeToolbar.h"
 #import <AVFoundation/AVCaptureDevice.h>
 #import <AVFoundation/AVMediaFormat.h>
+#import "ZCTextView.h"
+#import "ZCComposeToolbar.h"
+#import "ZCComposePhotoView.h"
+#import "ZCUploadImageParam.h"
+
 @interface ZCComposeViewController ()<UITextViewDelegate,ZCComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic,weak)ZCTextView *textView;
 @property (nonatomic,weak)ZCComposeToolbar *toolbar;
+@property (nonatomic,weak)ZCComposePhotoView *photoView;
 @end
 
 @implementation ZCComposeViewController
 
+#pragma mark 系统方法
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -25,12 +30,22 @@
     [self setTextView];
     [self setComposeToolbar];
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.textView becomeFirstResponder];
+}
+
+- (void)dealloc
+{
+    [ZCNotiCenter removeObserver:self];
+}
+#pragma mark 初始化子控件
 #pragma mark ZCTextView
 - (void)setTextView
 {
     ZCTextView *textView = [[ZCTextView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:textView];
-    [textView becomeFirstResponder];
     textView.font = [UIFont systemFontOfSize:20];
     textView.placeholder = @"分享些新鲜事吧...";
     textView.placeholderColor = [UIColor redColor];
@@ -52,6 +67,21 @@
     // 监听键盘
     [ZCNotiCenter addObserver:self selector:@selector(changeToolbarFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
+
+- (ZCComposePhotoView *)photoView
+{
+    if (!_photoView) {
+        ZCComposePhotoView *photoView = [[ZCComposePhotoView alloc]init];
+        [self.textView addSubview:photoView];
+        CGFloat photoViewY = 150;
+        CGFloat photoViewW = self.textView.width;
+        CGFloat photoViewH = self.view.height;
+        photoView.frame = CGRectMake(0, photoViewY, photoViewW, photoViewH);
+        _photoView = photoView;
+    }
+    return _photoView;
+}
+
 #pragma mark 导航栏
 - (void)setupNav
 {
@@ -89,18 +119,55 @@
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+#pragma mark 发微博
 
 - (void)post
+{
+    if (self.photoView.photoArr.count) {  // 有图片
+        [self sendWithImage];
+    }else{ //没有图片
+        [self sendWithoutImage];
+    }
+
+    [self cancel];
+}
+
+/**
+ 发送没有图片
+ */
+- (void)sendWithoutImage
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [ZCUtility readUserAccount].access_token;
     params[@"status"] = self.textView.text;
-    [[ZCAFHttpsRequest share] PostRequestWithUrl:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[ZCAFHttpsRequest share]PostRequestWithUrl:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+         [MBProgressHUD showError:@"发送失败"];
+    }];
+}
+/**
+ 发送有图片
+ */
+- (void)sendWithImage
+{
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [ZCUtility readUserAccount].access_token;
+    params[@"status"] = self.textView.text;
+    UIImage *image = self.photoView.photoArr.lastObject;
+    ZCUploadImageParam *imageParam = [[ZCUploadImageParam alloc]init];
+    imageParam.data = UIImageJPEGRepresentation(image, 1.0);
+    imageParam.name = @"pic";
+    imageParam.filename = @"text.jpg";
+    imageParam.mimeType = @"image/jpeg";
+    [[ZCAFHttpsRequest share] PostRequestWithUrl:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBody:imageParam success:^(NSURLSessionDataTask *task, id responseObject) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [MBProgressHUD showSuccess:@"发送失败"];
     }];
-    [self cancel];
+
+   
 }
 
 #pragma mark 监听键盘
@@ -182,6 +249,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    [self.photoView addImagePhoto:image];
 }
 
 #pragma mark textView delegate

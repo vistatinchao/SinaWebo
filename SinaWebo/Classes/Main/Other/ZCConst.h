@@ -39,6 +39,21 @@ UIKIT_EXTERN CGFloat const ZCStatusRetweetContentFont;
  */
 UIKIT_EXTERN CGFloat const ZCStatusPhotoImageWH;
 /** 最多列数 */
-UIKIT_EXTERN CGFloat const ZCStatusPhotoesMaxCow;
+UIKIT_EXTERN NSUInteger const ZCStatusPhotoesMaxCow;
 /** 最多配图个数*/
-UIKIT_EXTERN CGFloat const ZCStatusPhotoesMaxCount;
+UIKIT_EXTERN NSUInteger const ZCStatusPhotoesMaxCount;
+
+/**
+ 发微博
+ */
+
+/**
+ 配图
+ */
+UIKIT_EXTERN CGFloat const ZCComposePhotoImageWH;
+/** 最多列数 */
+UIKIT_EXTERN NSUInteger const ZCComposePhotoesMaxCow;
+/** 最多配图个数*/
+UIKIT_EXTERN NSUInteger const ZCComposePhotoesMaxCount;
+/** 图片间距*/
+UIKIT_EXTERN CGFloat const ZCComposePhotoMargin;

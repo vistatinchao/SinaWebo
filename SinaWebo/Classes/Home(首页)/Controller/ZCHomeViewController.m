@@ -163,6 +163,7 @@ static NSString *const cellID = @"statusCell";
         [self.tableView.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         ZCLog(@"%@",error);
+        [UIAlertView alertWithShowMessage:@"请求失败"];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView.mj_header endRefreshing];
     }];
@@ -179,7 +180,6 @@ static NSString *const cellID = @"statusCell";
 
 - (void)showBadgeValue
 {
-    ZCLogFunc;
     ZCUserAccount *userAccount = [ZCUtility readUserAccount];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = userAccount.access_token;
@@ -193,6 +193,7 @@ static NSString *const cellID = @"statusCell";
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         ZCLog(@"%@",error);
+        [UIAlertView alertWithShowMessage:@"请求失败"];
     }];
 }
 

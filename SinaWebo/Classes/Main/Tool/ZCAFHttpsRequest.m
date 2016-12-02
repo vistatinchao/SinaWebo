@@ -7,6 +7,7 @@
 //
 
 #import "ZCAFHttpsRequest.h"
+#import "ZCUploadImageParam.h"
 @interface ZCAFHttpsRequest()<NSCopying>
 @end
 @implementation ZCAFHttpsRequest
@@ -55,6 +56,26 @@ static ZCAFHttpsRequest *_requestManger;
         }
     }];
 }
+
+- (void)PostRequestWithUrl:(NSString *)url parameters:(id)parameters constructingBody:(ZCUploadImageParam *)uploadImageParam success:(successBlock)success failure:(fairureBlock)failure
+{
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    manger.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manger POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:uploadImageParam.data name:uploadImageParam.name fileName:uploadImageParam.filename mimeType:uploadImageParam.mimeType];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            success(task,dic);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(task,error);
+        }
+    }];
+}
+
 
 - (id)copyWithZone:(NSZone *)zone
 {
