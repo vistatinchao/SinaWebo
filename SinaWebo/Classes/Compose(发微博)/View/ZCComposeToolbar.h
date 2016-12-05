@@ -26,6 +26,11 @@ typedef enum : NSUInteger {
 
 @interface ZCComposeToolbar : UIView
 @property (nonatomic,weak)id<ZCComposeToolbarDelegate>delegate;
+
+/**
+ 是否要切换表情键盘
+ */
+@property (nonatomic,assign)BOOL showEmotionKeyboard;
 + (instancetype)toolbar;
 
 @end

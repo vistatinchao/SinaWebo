@@ -56,3 +56,11 @@ NSUInteger const ZCComposePhotoesMaxCow = 4;
 NSUInteger const ZCComposePhotoesMaxCount = 9;
 /** 图片间距*/
 CGFloat const ZCComposePhotoMargin = 10;
+/** 键盘高度*/
+CGFloat const ZCKeyboardHeight = 216;
+
+/** 表情键盘toolbar高度*/
+CGFloat const ZCEmotionToolbarHeight = 44;
+
+
+

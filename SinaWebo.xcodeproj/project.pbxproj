@@ -20,6 +20,8 @@
 		04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */; };
 		0465879C1DEFD97C00241D28 /* ZCComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
+		04BC5AB51DF51147000B0DD0 /* ZCEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */; };
+		04BC5AB81DF54898000B0DD0 /* ZCEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */; };
 		04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */; };
 		04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */; };
 		04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */; };
@@ -99,6 +101,10 @@
 		0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposeToolbar.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
+		04BC5AB31DF51147000B0DD0 /* ZCEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionKeyboard.h; sourceTree = "<group>"; };
+		04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionKeyboard.m; sourceTree = "<group>"; };
+		04BC5AB61DF54898000B0DD0 /* ZCEmotionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionToolbar.h; sourceTree = "<group>"; };
+		04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionToolbar.m; sourceTree = "<group>"; };
 		04C7F2431DE2CAC70095C1E4 /* ZCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUtility.h; sourceTree = "<group>"; };
 		04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCUtility.m; sourceTree = "<group>"; };
 		04C7F2461DE2CC000095C1E4 /* ZCAFHttpsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCAFHttpsRequest.h; sourceTree = "<group>"; };
@@ -316,6 +322,10 @@
 				0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */,
 				041AD7211DF115AB008F5F0A /* ZCComposePhotoView.h */,
 				041AD7221DF115AB008F5F0A /* ZCComposePhotoView.m */,
+				04BC5AB31DF51147000B0DD0 /* ZCEmotionKeyboard.h */,
+				04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */,
+				04BC5AB61DF54898000B0DD0 /* ZCEmotionToolbar.h */,
+				04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -828,6 +838,7 @@
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
 				04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */,
+				04BC5AB81DF54898000B0DD0 /* ZCEmotionToolbar.m in Sources */,
 				040800361DEE6ECF00E961FF /* ZCComposeViewController.m in Sources */,
 				041AD7261DF139E3008F5F0A /* ZCUploadImageParam.m in Sources */,
 				040800391DEEB9ED00E961FF /* ZCTextView.m in Sources */,
@@ -851,6 +862,7 @@
 				047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */,
 				04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */,
 				041AD7231DF115AB008F5F0A /* ZCComposePhotoView.m in Sources */,
+				04BC5AB51DF51147000B0DD0 /* ZCEmotionKeyboard.m in Sources */,
 				7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */,
 				043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,

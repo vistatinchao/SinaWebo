@@ -57,3 +57,10 @@ UIKIT_EXTERN NSUInteger const ZCComposePhotoesMaxCow;
 UIKIT_EXTERN NSUInteger const ZCComposePhotoesMaxCount;
 /** 图片间距*/
 UIKIT_EXTERN CGFloat const ZCComposePhotoMargin;
+
+/** 键盘高度*/
+UIKIT_EXTERN CGFloat const ZCKeyboardHeight;
+/** 表情键盘toolbar高度*/
+UIKIT_EXTERN CGFloat const ZCEmotionToolbarHeight;
+
+

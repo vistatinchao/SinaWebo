@@ -13,11 +13,14 @@
 #import "ZCComposeToolbar.h"
 #import "ZCComposePhotoView.h"
 #import "ZCUploadImageParam.h"
+#import "ZCEmotionKeyboard.h"
 
 @interface ZCComposeViewController ()<UITextViewDelegate,ZCComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic,weak)ZCTextView *textView;
 @property (nonatomic,weak)ZCComposeToolbar *toolbar;
 @property (nonatomic,weak)ZCComposePhotoView *photoView;
+@property (nonatomic,strong)ZCEmotionKeyboard *emotionKeyboardView;
+
 @end
 
 @implementation ZCComposeViewController
@@ -67,7 +70,7 @@
     // 监听键盘
     [ZCNotiCenter addObserver:self selector:@selector(changeToolbarFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
-
+#pragma mark 懒加载view
 - (ZCComposePhotoView *)photoView
 {
     if (!_photoView) {
@@ -80,6 +83,15 @@
         _photoView = photoView;
     }
     return _photoView;
+}
+
+- (ZCEmotionKeyboard *)emotionKeyboardView
+{
+    if (!_emotionKeyboardView) {
+        _emotionKeyboardView = [[ZCEmotionKeyboard alloc]init];
+        _emotionKeyboardView.size = CGSizeMake(ZCScreenW, ZCKeyboardHeight);
+    }
+    return _emotionKeyboardView;
 }
 
 #pragma mark 导航栏
@@ -207,12 +219,54 @@
 
             break;
         case ZCComposeToolbarBtnEmotion:
-
+            [self switchKeyboard:toolbar];
             break;
 
         default:
             break;
     }
+}
+
+- (void)switchKeyboard:(ZCComposeToolbar *)toolbar
+{
+    toolbar.showEmotionKeyboard = !toolbar.showEmotionKeyboard;
+    [self.textView resignFirstResponder];
+    if (toolbar.showEmotionKeyboard) {// 切换表情键盘
+        self.textView.inputView = self.emotionKeyboardView;
+    }else{
+        self.textView.inputView = nil;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.textView becomeFirstResponder];
+    });
+
+    // self.textView.inputView == nil : 使用的是系统自带的键盘
+//    if (self.textView.inputView == nil) { // 切换为自定义的表情键盘
+//        self.textView.inputView = self.emotionKeyboardView;
+//
+//        // 显示键盘按钮
+//        self.toolbar.showEmotionKeyboard = YES;
+//    } else { // 切换为系统自带的键盘
+//        self.textView.inputView = nil;
+//
+//        // 显示表情按钮
+//        self.toolbar.showEmotionKeyboard = NO;
+//    }
+//
+//    // 开始切换键盘
+//    self.showEmotionKeyboard = YES;
+//
+//    // 退出键盘
+//    [self.textView endEditing:YES];
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        // 弹出键盘
+//        [self.textView becomeFirstResponder];
+//
+//        // 结束切换键盘
+//        self.showEmotionKeyboard = NO;
+//    });
+
 }
 
 - (void)openCamera
