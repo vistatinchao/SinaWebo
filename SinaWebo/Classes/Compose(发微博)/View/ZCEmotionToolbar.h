@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ZCEmotionToolbar;
 typedef enum : NSUInteger {
     ZCEmotionToolbarButtonRecent,// 最近
     ZCEmotionToolbarButtonDefault,// 默认
     ZCEmotionToolbarButtonEmoji,// emoji
     ZCEmotionToolbarButtonLxh // 浪小花
 } ZCEmotionToolbarButtonType;
-@interface ZCEmotionToolbar : UIView
 
+@protocol ZCEmotionToolbarDelegate <NSObject>
+
+@optional
+
+- (void)emotionToolbar:(ZCEmotionToolbar *)emotionToolbar didClickBtnType:(ZCEmotionToolbarButtonType)btnType;
+
+@end
+@interface ZCEmotionToolbar : UIView
+@property (nonatomic,weak)id<ZCEmotionToolbarDelegate>delegate;
 @end

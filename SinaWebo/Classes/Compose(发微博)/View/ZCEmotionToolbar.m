@@ -47,9 +47,13 @@
     }
     [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:disableImage] forState:UIControlStateDisabled];
-    if (btn.tag==ZCEmotionToolbarButtonDefault) {
-        [self btnClick:btn];
-    }
+}
+
+- (void)setDelegate:(id<ZCEmotionToolbarDelegate>)delegate
+{
+    _delegate = delegate;
+    UIButton *defaultBtn =(UIButton *)[self viewWithTag:ZCEmotionToolbarButtonDefault];
+    [self btnClick:defaultBtn];
 }
 
 - (void)btnClick:(UIButton *)btn
@@ -57,6 +61,9 @@
     self.lastBtn.enabled = YES;
     btn.enabled = NO;
     self.lastBtn = btn;
+    if ([self.delegate respondsToSelector:@selector(emotionToolbar:didClickBtnType:)]) {
+        [self.delegate emotionToolbar:self didClickBtnType:btn.tag];
+    }
 }
 
 - (void)layoutSubviews

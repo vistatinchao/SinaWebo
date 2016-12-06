@@ -19,6 +19,8 @@
 		04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */; };
 		04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */; };
 		0465879C1DEFD97C00241D28 /* ZCComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */; };
+		047930D51DF6B40C008A8F92 /* ZCEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */; };
+		047930D81DF6B517008A8F92 /* ZCEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D71DF6B517008A8F92 /* ZCEmotion.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
 		04BC5AB51DF51147000B0DD0 /* ZCEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */; };
 		04BC5AB81DF54898000B0DD0 /* ZCEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */; };
@@ -100,6 +102,10 @@
 		04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPhotoImageView.m; sourceTree = "<group>"; };
 		0465879A1DEFD97C00241D28 /* ZCComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCComposeToolbar.h; sourceTree = "<group>"; };
 		0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposeToolbar.m; sourceTree = "<group>"; };
+		047930D31DF6B40C008A8F92 /* ZCEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionListView.h; sourceTree = "<group>"; };
+		047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionListView.m; sourceTree = "<group>"; };
+		047930D61DF6B517008A8F92 /* ZCEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotion.h; sourceTree = "<group>"; };
+		047930D71DF6B517008A8F92 /* ZCEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotion.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
 		04BC5AB31DF51147000B0DD0 /* ZCEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionKeyboard.h; sourceTree = "<group>"; };
@@ -314,6 +320,8 @@
 		04EF94981DD9606F00E65FE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047930D61DF6B517008A8F92 /* ZCEmotion.h */,
+				047930D71DF6B517008A8F92 /* ZCEmotion.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +337,8 @@
 				04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */,
 				04BC5AB61DF54898000B0DD0 /* ZCEmotionToolbar.h */,
 				04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */,
+				047930D31DF6B40C008A8F92 /* ZCEmotionListView.h */,
+				047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,6 +859,7 @@
 				04EF94D91DD9A5DF00E65FE5 /* ZCProfileViewController.m in Sources */,
 				041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */,
 				04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */,
+				047930D81DF6B517008A8F92 /* ZCEmotion.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
 				7A503D6D1DE72CDA00CD7FC7 /* ZCPhoto.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
@@ -873,6 +884,7 @@
 				043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */,
 				04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */,
 				0465879C1DEFD97C00241D28 /* ZCComposeToolbar.m in Sources */,
+				047930D51DF6B40C008A8F92 /* ZCEmotionListView.m in Sources */,
 				043DE31A1DE6EBCF008F4267 /* ZCStatusCellToobar.m in Sources */,
 				04EF94DC1DD9A5ED00E65FE5 /* ZCDiscoverViewController.m in Sources */,
 				04EF94DF1DD9B4F000E65FE5 /* ZCTextViewController.m in Sources */,
