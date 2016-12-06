@@ -26,6 +26,7 @@
 		04C7F2481DE2CC000095C1E4 /* ZCAFHttpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2471DE2CC000095C1E4 /* ZCAFHttpsRequest.m */; };
 		04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */; };
 		04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */; };
+		04D5039B1DF6A53D00083AE7 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 04D5039A1DF6A53D00083AE7 /* EmotionIcons */; };
 		04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */; };
 		04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */; };
 		04D73C111DDEFB1200517C0A /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */; };
@@ -112,6 +113,7 @@
 		04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		04D317731DDD8A6E008FE97C /* ZCNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNewFeatureViewController.h; sourceTree = "<group>"; };
 		04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNewFeatureViewController.m; sourceTree = "<group>"; };
+		04D5039A1DF6A53D00083AE7 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
 		04D73C061DDEA89200517C0A /* ZCOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCOAuthViewController.h; sourceTree = "<group>"; };
 		04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCOAuthViewController.m; sourceTree = "<group>"; };
 		04D73C091DDEF5D100517C0A /* UIWindow+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ZCExtension.h"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		04EF94621DD9546500E65FE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04D5039A1DF6A53D00083AE7 /* EmotionIcons */,
 				04EF946E1DD9546500E65FE5 /* Assets.xcassets */,
 				04EF94701DD9546500E65FE5 /* LaunchScreen.storyboard */,
 				04EF94731DD9546500E65FE5 /* Info.plist */,
@@ -762,6 +765,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D5039B1DF6A53D00083AE7 /* EmotionIcons in Resources */,
 				04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */,
 				04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */,
 			);
