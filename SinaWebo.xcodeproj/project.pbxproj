@@ -22,6 +22,7 @@
 		047930D51DF6B40C008A8F92 /* ZCEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */; };
 		047930D81DF6B517008A8F92 /* ZCEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D71DF6B517008A8F92 /* ZCEmotion.m */; };
 		047DE56D1DDAEE3C006D3B8D /* ZCSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */; };
+		04B0D5BE1DF954160050002F /* ZCEmotionsPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D5BD1DF954160050002F /* ZCEmotionsPageView.m */; };
 		04BC5AB51DF51147000B0DD0 /* ZCEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */; };
 		04BC5AB81DF54898000B0DD0 /* ZCEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */; };
 		04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2441DE2CAC70095C1E4 /* ZCUtility.m */; };
@@ -108,6 +109,8 @@
 		047930D71DF6B517008A8F92 /* ZCEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotion.m; sourceTree = "<group>"; };
 		047DE56B1DDAEE3C006D3B8D /* ZCSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchBar.h; sourceTree = "<group>"; };
 		047DE56C1DDAEE3C006D3B8D /* ZCSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchBar.m; sourceTree = "<group>"; };
+		04B0D5BC1DF954160050002F /* ZCEmotionsPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionsPageView.h; sourceTree = "<group>"; };
+		04B0D5BD1DF954160050002F /* ZCEmotionsPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionsPageView.m; sourceTree = "<group>"; };
 		04BC5AB31DF51147000B0DD0 /* ZCEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionKeyboard.h; sourceTree = "<group>"; };
 		04BC5AB41DF51147000B0DD0 /* ZCEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionKeyboard.m; sourceTree = "<group>"; };
 		04BC5AB61DF54898000B0DD0 /* ZCEmotionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionToolbar.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				04BC5AB71DF54898000B0DD0 /* ZCEmotionToolbar.m */,
 				047930D31DF6B40C008A8F92 /* ZCEmotionListView.h */,
 				047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */,
+				04B0D5BC1DF954160050002F /* ZCEmotionsPageView.h */,
+				04B0D5BD1DF954160050002F /* ZCEmotionsPageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -878,6 +883,7 @@
 				04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */,
 				041AD7231DF115AB008F5F0A /* ZCComposePhotoView.m in Sources */,
 				04BC5AB51DF51147000B0DD0 /* ZCEmotionKeyboard.m in Sources */,
+				04B0D5BE1DF954160050002F /* ZCEmotionsPageView.m in Sources */,
 				7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */,
 				043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,

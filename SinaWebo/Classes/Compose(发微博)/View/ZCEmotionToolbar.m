@@ -35,6 +35,9 @@
     [self addSubview:btn];
     btn.tag = type;
     [btn setTitle:title forState:UIControlStateNormal];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
     NSString *image = @"compose_emotion_table_mid_normal";
     NSString *disableImage = @"compose_emotion_table_mid_selected";

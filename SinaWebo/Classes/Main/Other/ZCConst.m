@@ -17,7 +17,7 @@ CGFloat const ZCSearchBarFont = 15;
 /**
  newfeature
  */
-NSString *const ZCCFBundleShortVersionStringKey = @"CFBundleShortVersionString";
+NSString *const ZCCFBundleShortVersionStringKey = @"ZCFBundleShortVersionString";
 /**
  首页
  */

@@ -98,19 +98,16 @@
         case ZCEmotionToolbarButtonDefault:{
             [self addSubview:self.defaultListView];
             self.showingListView = self.defaultListView;
-            ZCLog(@"ZCEmotionToolbarButtonDefault");
             break;
         }
         case ZCEmotionToolbarButtonEmoji:{
             [self addSubview:self.emojiListView];
             self.showingListView = self.emojiListView;
-            ZCLog(@"ZCEmotionToolbarButtonEmoji");
             break;
         }
         case ZCEmotionToolbarButtonLxh:{
             [self addSubview:self.lxhListView];
             self.showingListView = self.lxhListView;
-            ZCLog(@"ZCEmotionToolbarButtonLxh");
             break;
         }
         default:
