@@ -73,7 +73,8 @@
         [ZCLastWindow chooseRootViewController];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:ZCLastWindow];
+      //  [MBProgressHUD hideHUDForView:ZCLastWindow];
+        [MBProgressHUD hideHUD];
         ZCLog(@"%@",error);
     }];
 }
@@ -86,12 +87,14 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     ZCLogFunc;
-    [MBProgressHUD hideHUDForView:ZCLastWindow];
+   // [MBProgressHUD hideHUDForView:ZCLastWindow];
+    [MBProgressHUD hideHUD];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     ZCLogFunc;
-    [MBProgressHUD hideHUDForView:ZCLastWindow];
+   // [MBProgressHUD hideHUDForView:ZCLastWindow];
+    [MBProgressHUD hideHUD];
 }
 
 - (void)dealloc
