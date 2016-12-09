@@ -92,27 +92,23 @@
     switch (btnType) {
         case ZCEmotionToolbarButtonRecent:{
             [self addSubview:self.recentListView];
-            self.showingListView = self.recentListView;
             break;
         }
         case ZCEmotionToolbarButtonDefault:{
             [self addSubview:self.defaultListView];
-            self.showingListView = self.defaultListView;
             break;
         }
         case ZCEmotionToolbarButtonEmoji:{
             [self addSubview:self.emojiListView];
-            self.showingListView = self.emojiListView;
             break;
         }
         case ZCEmotionToolbarButtonLxh:{
             [self addSubview:self.lxhListView];
-            self.showingListView = self.lxhListView;
             break;
         }
-        default:
-            break;
     }
+    self.showingListView = self.subviews.lastObject;
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
@@ -126,6 +122,7 @@
     self.showingListView.x = self.showingListView.y = 0;
     self.showingListView.width = self.width;
     self.showingListView.height = self.toolbar.y;
+    
 }
 
 @end

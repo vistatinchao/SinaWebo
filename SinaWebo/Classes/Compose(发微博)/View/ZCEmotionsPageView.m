@@ -17,7 +17,7 @@
     }
     return self;
 }
-#warning todo 浪小花图片 还有默认图片进来不出来 以及启动页面问题
+#warning todo  还有默认图片进来不出来 以及启动页面问题
 - (void)setEmotions:(NSArray *)emotions
 {
     _emotions = emotions;
@@ -27,8 +27,14 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self addSubview:btn];
         ZCEmotion *emotion = emotions[i];
-        image = emotion.png;
-        [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+        if (emotion.code) { //emoji 字符
+            image = emotion.code.emoji;
+            [btn setTitle:image forState:UIControlStateNormal];
+            [btn.titleLabel setFont:[UIFont systemFontOfSize:32]];
+        }else{
+             image = emotion.png;
+             [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+        }
     }
 }
 
@@ -36,9 +42,9 @@
 {
     [super layoutSubviews];
      NSUInteger count = self.subviews.count;
-    CGFloat btnInset = 10;
-    NSUInteger maxCow = 7;
-    NSUInteger maxRow = 3;
+    CGFloat btnInset = ZCEmotionListViewInsetPadding;
+    NSUInteger maxCow = ZCEmotionListViewPageCow;
+    NSUInteger maxRow = ZCEmotionListViewPageRow;
     CGFloat btnX = 0;
     CGFloat btnY = 0;
     CGFloat btnW = (self.width-2*btnInset)/maxCow;

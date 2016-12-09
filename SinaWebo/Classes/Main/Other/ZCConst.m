@@ -61,6 +61,11 @@ CGFloat const ZCKeyboardHeight = 216;
 
 /** 表情键盘toolbar高度*/
 CGFloat const ZCEmotionToolbarHeight = 44;
-
-
-
+/** 表情键盘pageMaxCount*/
+NSUInteger const ZCEmotionListViewPageMaxCount = 20;
+/** 表情键盘btnInset*/
+CGFloat const ZCEmotionListViewInsetPadding = 10;
+/** 表情键盘pageEmotionCow*/
+NSUInteger const ZCEmotionListViewPageCow = 7;
+/** 表情键盘pageEmotionRow*/
+NSUInteger const ZCEmotionListViewPageRow = 3;

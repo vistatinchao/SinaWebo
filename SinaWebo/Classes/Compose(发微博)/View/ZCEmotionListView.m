@@ -17,6 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor whiteColor];
         [self setSubView];
     }
     return self;
@@ -24,18 +25,8 @@
 
 - (void)setSubView
 {
-    // add pagecontroller
-    UIPageControl *page = [[UIPageControl alloc]init];
-    [self addSubview:page];
-    page.userInteractionEnabled = NO;
-    [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_normal"] forKeyPath:@"pageImage"];
-    [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_selected"]forKeyPath:@"currentPageImage"];
-
-    self.pageController = page;
-    
     // add scrollview
     UIScrollView *scrollView = [[UIScrollView alloc]init];
-    scrollView.backgroundColor= [UIColor grayColor];
     [self addSubview:scrollView];
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
@@ -43,12 +34,20 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollview = scrollView;
+
+    // add pagecontroller
+    UIPageControl *page = [[UIPageControl alloc]init];
+    [self addSubview:page];
+    page.userInteractionEnabled = NO;
+    [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_normal"] forKeyPath:@"pageImage"];
+    [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_selected"]forKeyPath:@"currentPageImage"];
+    self.pageController = page;
 }
 
 - (void)setEmotions:(NSArray *)emotions
 {
     _emotions = emotions;
-    NSUInteger pageMaxCount = 20;// 每一页的最大个数
+    NSUInteger pageMaxCount = ZCEmotionListViewPageMaxCount;// 每一页的最大个数
     NSUInteger pages = (emotions.count+pageMaxCount-1)/pageMaxCount;// 有多少页
     for (NSInteger i=0;i<pages ; i++) {
         ZCEmotionsPageView *pageView = [[ZCEmotionsPageView alloc]init];
@@ -64,6 +63,7 @@
         pageView.emotions = pageEmotions;
     }
     self.pageController.numberOfPages = pages;
+    [self setNeedsLayout];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

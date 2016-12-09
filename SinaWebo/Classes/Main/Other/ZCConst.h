@@ -62,5 +62,13 @@ UIKIT_EXTERN CGFloat const ZCComposePhotoMargin;
 UIKIT_EXTERN CGFloat const ZCKeyboardHeight;
 /** 表情键盘toolbar高度*/
 UIKIT_EXTERN CGFloat const ZCEmotionToolbarHeight;
+/** 表情键盘pageMaxCount*/
+UIKIT_EXTERN NSUInteger const ZCEmotionListViewPageMaxCount;
+/** 表情键盘btnInset*/
+UIKIT_EXTERN CGFloat const ZCEmotionListViewInsetPadding;
+/** 表情键盘pageEmotionCow*/
+UIKIT_EXTERN NSUInteger const ZCEmotionListViewPageCow;
+/** 表情键盘pageEmotionRow*/
+UIKIT_EXTERN NSUInteger const ZCEmotionListViewPageRow;
 
 

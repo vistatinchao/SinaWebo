@@ -19,6 +19,7 @@
 /* 包含的头文件 */
 #import "UIView+ZCExtension.h"
 #import "NSString+ZCExtension.h"
+#import "NSString+Emoji.h"
 #import "UIWindow+ZCExtension.h"
 #import "NSString+ZCExtension.h"
 #import "NSDate+ZCExtension.h"

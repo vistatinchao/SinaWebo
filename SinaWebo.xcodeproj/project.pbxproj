@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040800361DEE6ECF00E961FF /* ZCComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040800351DEE6ECF00E961FF /* ZCComposeViewController.m */; };
 		040800391DEEB9ED00E961FF /* ZCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040800381DEEB9ED00E961FF /* ZCTextView.m */; };
+		04182E761DFA48C400A8D7DD /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 04182E751DFA48C400A8D7DD /* NSString+Emoji.m */; };
 		041AD7231DF115AB008F5F0A /* ZCComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041AD7221DF115AB008F5F0A /* ZCComposePhotoView.m */; };
 		041AD7261DF139E3008F5F0A /* ZCUploadImageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 041AD7251DF139E3008F5F0A /* ZCUploadImageParam.m */; };
 		041B54A11DDC156C0042BC76 /* ZCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B54A01DDC156C0042BC76 /* ZCTabBar.m */; };
@@ -83,6 +84,8 @@
 		040800351DEE6ECF00E961FF /* ZCComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposeViewController.m; sourceTree = "<group>"; };
 		040800371DEEB9ED00E961FF /* ZCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTextView.h; sourceTree = "<group>"; };
 		040800381DEEB9ED00E961FF /* ZCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextView.m; sourceTree = "<group>"; };
+		04182E741DFA48C400A8D7DD /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		04182E751DFA48C400A8D7DD /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		041AD7211DF115AB008F5F0A /* ZCComposePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCComposePhotoView.h; sourceTree = "<group>"; };
 		041AD7221DF115AB008F5F0A /* ZCComposePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposePhotoView.m; sourceTree = "<group>"; };
 		041AD7241DF139E3008F5F0A /* ZCUploadImageParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCUploadImageParam.h; sourceTree = "<group>"; };
@@ -450,6 +453,8 @@
 		04EF94A31DD9606F00E65FE5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				04182E741DFA48C400A8D7DD /* NSString+Emoji.h */,
+				04182E751DFA48C400A8D7DD /* NSString+Emoji.m */,
 				04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */,
 				04D73C0F1DDEFB1200517C0A /* MBProgressHUD+MJ.h */,
 				04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */,
@@ -898,6 +903,7 @@
 				04D963FE1DE3E62100B3BE74 /* ZCStatus.m in Sources */,
 				04EF94D31DD9A5AD00E65FE5 /* ZCHomeViewController.m in Sources */,
 				04EF94BC1DD9606F00E65FE5 /* AppDelegate.m in Sources */,
+				04182E761DFA48C400A8D7DD /* NSString+Emoji.m in Sources */,
 				7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */,
 				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
 				043F52E81DED7158003764D7 /* ZCIconImageView.m in Sources */,
@@ -1041,6 +1047,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;
@@ -1058,6 +1065,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G4E6298X77;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SinaWebo/PrefixHeader.pch;

@@ -9,6 +9,7 @@
 #import "ZCEmotionToolbar.h"
 @interface ZCEmotionToolbar()
 @property (nonatomic,weak)UIButton *lastBtn;
+@property (nonatomic,strong)UIButton *defaultBtn;
 @end
 @implementation ZCEmotionToolbar
 
@@ -24,12 +25,12 @@
 - (void)addBtn
 {
     [self addBtnWithTitle:@"最近" btnType:ZCEmotionToolbarButtonRecent];
-    [self addBtnWithTitle:@"默认" btnType:ZCEmotionToolbarButtonDefault];
-    [self addBtnWithTitle:@"Emoji" btnType:ZCEmotionToolbarButtonEmoji];
+     self.defaultBtn= [self addBtnWithTitle:@"默认" btnType:ZCEmotionToolbarButtonDefault];
+   [self addBtnWithTitle:@"Emoji" btnType:ZCEmotionToolbarButtonEmoji];
     [self addBtnWithTitle:@"浪小花" btnType:ZCEmotionToolbarButtonLxh];
 }
 
-- (void)addBtnWithTitle:(NSString *)title btnType:(ZCEmotionToolbarButtonType)type
+- (UIButton *)addBtnWithTitle:(NSString *)title btnType:(ZCEmotionToolbarButtonType)type
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self addSubview:btn];
@@ -50,13 +51,15 @@
     }
     [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:disableImage] forState:UIControlStateDisabled];
+    return btn;
 }
 
 - (void)setDelegate:(id<ZCEmotionToolbarDelegate>)delegate
 {
+
     _delegate = delegate;
-    UIButton *defaultBtn =(UIButton *)[self viewWithTag:ZCEmotionToolbarButtonDefault];
-    [self btnClick:defaultBtn];
+
+    [self btnClick:self.defaultBtn];
 }
 
 - (void)btnClick:(UIButton *)btn
@@ -71,6 +74,7 @@
 
 - (void)layoutSubviews
 {
+
     CGFloat count = self.subviews.count;
     CGFloat btnX = 0;
     CGFloat btnY = 0;
