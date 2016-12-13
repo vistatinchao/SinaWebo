@@ -49,6 +49,11 @@
     [super setText:text];
     [self setNeedsDisplay];
 }
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    [self setNeedsDisplay];
+}
 
 - (void)setPlaceholder:(NSString *)placeholder
 {

@@ -70,5 +70,12 @@ UIKIT_EXTERN CGFloat const ZCEmotionListViewInsetPadding;
 UIKIT_EXTERN NSUInteger const ZCEmotionListViewPageCow;
 /** 表情键盘pageEmotionRow*/
 UIKIT_EXTERN NSUInteger const ZCEmotionListViewPageRow;
-
+/**
+ 显示表情通知
+ */
+UIKIT_EXTERN NSString *const ZCNotificationDidShowEmotion;
+/**
+ 显示表情通知Key
+ */
+UIKIT_EXTERN NSString *const ZCKeyNotificationDidShowEmotion;
 

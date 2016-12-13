@@ -9,14 +9,15 @@
 #import "ZCComposeViewController.h"
 #import <AVFoundation/AVCaptureDevice.h>
 #import <AVFoundation/AVMediaFormat.h>
-#import "ZCTextView.h"
+#import "ZCEmotionTextView.h"
 #import "ZCComposeToolbar.h"
 #import "ZCComposePhotoView.h"
 #import "ZCUploadImageParam.h"
 #import "ZCEmotionKeyboard.h"
+#import "ZCEmotion.h"
 
 @interface ZCComposeViewController ()<UITextViewDelegate,ZCComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
-@property (nonatomic,weak)ZCTextView *textView;
+@property (nonatomic,weak)ZCEmotionTextView *textView;
 @property (nonatomic,weak)ZCComposeToolbar *toolbar;
 @property (nonatomic,weak)ZCComposePhotoView *photoView;
 @property (nonatomic,strong)ZCEmotionKeyboard *emotionKeyboardView;
@@ -47,7 +48,7 @@
 #pragma mark ZCTextView
 - (void)setTextView
 {
-    ZCTextView *textView = [[ZCTextView alloc]initWithFrame:self.view.bounds];
+    ZCEmotionTextView *textView = [[ZCEmotionTextView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:textView];
     textView.font = [UIFont systemFontOfSize:20];
     textView.placeholder = @"分享些新鲜事吧...";
@@ -69,6 +70,8 @@
     self.toolbar = toolbar;
     // 监听键盘
     [ZCNotiCenter addObserver:self selector:@selector(changeToolbarFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+     // textView显示表情
+    [ZCNotiCenter addObserver:self selector:@selector(showEmotion:) name:ZCNotificationDidShowEmotion object:nil];
 }
 #pragma mark 懒加载view
 - (ZCComposePhotoView *)photoView
@@ -201,6 +204,16 @@
         }
     }];
 
+}
+
+/**
+ * 显示表情
+ */
+
+- (void)showEmotion:(NSNotification *)noti
+{
+    ZCEmotion *emotion = noti.userInfo[ZCKeyNotificationDidShowEmotion];
+    [self.textView insertEmotion:emotion];
 }
 #pragma mark toolbar delegate
 - (void)composeToolbar:(ZCComposeToolbar *)toolbar didClickBtnType:(ZCComposeToolbarBtnType)btnType

@@ -25,6 +25,7 @@
 #import "NSDate+ZCExtension.h"
 #import "UIBarButtonItem+ZCExtension.h"
 #import "UIAlertView+ZCExtension.h"
+#import "UITextView+ZCExtension.h"
 #import "ZCConst.h"
 #import "ZCUtility.h"
 #import "ZCUserAccount.h"

@@ -69,3 +69,11 @@ CGFloat const ZCEmotionListViewInsetPadding = 10;
 NSUInteger const ZCEmotionListViewPageCow = 7;
 /** 表情键盘pageEmotionRow*/
 NSUInteger const ZCEmotionListViewPageRow = 3;
+/**
+ 显示表情通知
+ */
+NSString *const ZCNotificationDidShowEmotion = @"ZCNotificationDidShowEmotion";
+/**
+ 显示表情通知Key
+ */
+NSString *const ZCKeyNotificationDidShowEmotion = @"ZCKeyNotificationDidShowEmotion";

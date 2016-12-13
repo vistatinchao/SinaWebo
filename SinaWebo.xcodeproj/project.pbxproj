@@ -19,6 +19,9 @@
 		043F52E81DED7158003764D7 /* ZCIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043F52E71DED7158003764D7 /* ZCIconImageView.m */; };
 		04539C851DEBD0BC00DE1C89 /* ZCStatusPhotoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */; };
 		04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */; };
+		04560F481DFFF08A00B5876D /* ZCEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04560F471DFFF08A00B5876D /* ZCEmotionTextView.m */; };
+		04560F4B1DFFF7C100B5876D /* UITextView+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04560F4A1DFFF7C100B5876D /* UITextView+ZCExtension.m */; };
+		04560F4E1DFFFD4400B5876D /* ZCEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 04560F4D1DFFFD4400B5876D /* ZCEmotionAttachment.m */; };
 		0465879C1DEFD97C00241D28 /* ZCComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */; };
 		047930D51DF6B40C008A8F92 /* ZCEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */; };
 		047930D81DF6B517008A8F92 /* ZCEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 047930D71DF6B517008A8F92 /* ZCEmotion.m */; };
@@ -31,6 +34,9 @@
 		04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7F2491DE2DA970095C1E4 /* Foundation+Log.m */; };
 		04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */; };
 		04D5039B1DF6A53D00083AE7 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 04D5039A1DF6A53D00083AE7 /* EmotionIcons */; };
+		04D58C9E1DFE98CB009D3C92 /* ZCEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D58C9D1DFE98CB009D3C92 /* ZCEmotionPopView.m */; };
+		04D58CA01DFE98F3009D3C92 /* ZCEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D58C9F1DFE98F3009D3C92 /* ZCEmotionPopView.xib */; };
+		04D58CA31DFE9A68009D3C92 /* ZCEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D58CA21DFE9A68009D3C92 /* ZCEmotionButton.m */; };
 		04D73C081DDEA89200517C0A /* ZCOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */; };
 		04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C0A1DDEF5D100517C0A /* UIWindow+ZCExtension.m */; };
 		04D73C111DDEFB1200517C0A /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73C101DDEFB1200517C0A /* MBProgressHUD+MJ.m */; };
@@ -104,6 +110,12 @@
 		04539C841DEBD0BC00DE1C89 /* ZCStatusPhotoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCStatusPhotoes.m; sourceTree = "<group>"; };
 		04539C861DEC309B00DE1C89 /* ZCPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPhotoImageView.h; sourceTree = "<group>"; };
 		04539C871DEC309B00DE1C89 /* ZCPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPhotoImageView.m; sourceTree = "<group>"; };
+		04560F461DFFF08900B5876D /* ZCEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionTextView.h; sourceTree = "<group>"; };
+		04560F471DFFF08A00B5876D /* ZCEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionTextView.m; sourceTree = "<group>"; };
+		04560F491DFFF7C100B5876D /* UITextView+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZCExtension.h"; sourceTree = "<group>"; };
+		04560F4A1DFFF7C100B5876D /* UITextView+ZCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZCExtension.m"; sourceTree = "<group>"; };
+		04560F4C1DFFFD4400B5876D /* ZCEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionAttachment.h; sourceTree = "<group>"; };
+		04560F4D1DFFFD4400B5876D /* ZCEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionAttachment.m; sourceTree = "<group>"; };
 		0465879A1DEFD97C00241D28 /* ZCComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCComposeToolbar.h; sourceTree = "<group>"; };
 		0465879B1DEFD97C00241D28 /* ZCComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCComposeToolbar.m; sourceTree = "<group>"; };
 		047930D31DF6B40C008A8F92 /* ZCEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionListView.h; sourceTree = "<group>"; };
@@ -126,6 +138,11 @@
 		04D317731DDD8A6E008FE97C /* ZCNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNewFeatureViewController.h; sourceTree = "<group>"; };
 		04D317741DDD8A6E008FE97C /* ZCNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNewFeatureViewController.m; sourceTree = "<group>"; };
 		04D5039A1DF6A53D00083AE7 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		04D58C9C1DFE98CB009D3C92 /* ZCEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionPopView.h; sourceTree = "<group>"; };
+		04D58C9D1DFE98CB009D3C92 /* ZCEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionPopView.m; sourceTree = "<group>"; };
+		04D58C9F1DFE98F3009D3C92 /* ZCEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCEmotionPopView.xib; sourceTree = "<group>"; };
+		04D58CA11DFE9A68009D3C92 /* ZCEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCEmotionButton.h; sourceTree = "<group>"; };
+		04D58CA21DFE9A68009D3C92 /* ZCEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCEmotionButton.m; sourceTree = "<group>"; };
 		04D73C061DDEA89200517C0A /* ZCOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCOAuthViewController.h; sourceTree = "<group>"; };
 		04D73C071DDEA89200517C0A /* ZCOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCOAuthViewController.m; sourceTree = "<group>"; };
 		04D73C091DDEF5D100517C0A /* UIWindow+ZCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ZCExtension.h"; sourceTree = "<group>"; };
@@ -328,6 +345,8 @@
 			children = (
 				047930D61DF6B517008A8F92 /* ZCEmotion.h */,
 				047930D71DF6B517008A8F92 /* ZCEmotion.m */,
+				04560F4C1DFFFD4400B5876D /* ZCEmotionAttachment.h */,
+				04560F4D1DFFFD4400B5876D /* ZCEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +366,13 @@
 				047930D41DF6B40C008A8F92 /* ZCEmotionListView.m */,
 				04B0D5BC1DF954160050002F /* ZCEmotionsPageView.h */,
 				04B0D5BD1DF954160050002F /* ZCEmotionsPageView.m */,
+				04D58C9C1DFE98CB009D3C92 /* ZCEmotionPopView.h */,
+				04D58C9D1DFE98CB009D3C92 /* ZCEmotionPopView.m */,
+				04D58C9F1DFE98F3009D3C92 /* ZCEmotionPopView.xib */,
+				04D58CA11DFE9A68009D3C92 /* ZCEmotionButton.h */,
+				04D58CA21DFE9A68009D3C92 /* ZCEmotionButton.m */,
+				04560F461DFFF08900B5876D /* ZCEmotionTextView.h */,
+				04560F471DFFF08A00B5876D /* ZCEmotionTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +496,8 @@
 				7AEE2E851DE9D9610062F019 /* NSDate+ZCExtension.m */,
 				04DD70291DF013FC00D4C8AA /* UIAlertView+ZCExtension.h */,
 				04DD702A1DF013FC00D4C8AA /* UIAlertView+ZCExtension.m */,
+				04560F491DFFF7C100B5876D /* UITextView+ZCExtension.h */,
+				04560F4A1DFFF7C100B5876D /* UITextView+ZCExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -788,6 +816,7 @@
 				04D5039B1DF6A53D00083AE7 /* EmotionIcons in Resources */,
 				04EF94721DD9546500E65FE5 /* LaunchScreen.storyboard in Resources */,
 				04EF946F1DD9546500E65FE5 /* Assets.xcassets in Resources */,
+				04D58CA01DFE98F3009D3C92 /* ZCEmotionPopView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EF94D01DD96A4200E65FE5 /* ZCConst.m in Sources */,
+				04560F4E1DFFFD4400B5876D /* ZCEmotionAttachment.m in Sources */,
 				04C7F24A1DE2DA970095C1E4 /* Foundation+Log.m in Sources */,
 				04BC5AB81DF54898000B0DD0 /* ZCEmotionToolbar.m in Sources */,
 				040800361DEE6ECF00E961FF /* ZCComposeViewController.m in Sources */,
@@ -871,9 +901,11 @@
 				04C7F2451DE2CAC70095C1E4 /* ZCUtility.m in Sources */,
 				047930D81DF6B517008A8F92 /* ZCEmotion.m in Sources */,
 				7A9F9B541DDB610B006FF9CF /* ZCHomeTitleButton.m in Sources */,
+				04560F4B1DFFF7C100B5876D /* UITextView+ZCExtension.m in Sources */,
 				7A503D6D1DE72CDA00CD7FC7 /* ZCPhoto.m in Sources */,
 				04EF94D61DD9A5C600E65FE5 /* ZCMessageViewController.m in Sources */,
 				04D73C0B1DDEF5D100517C0A /* UIWindow+ZCExtension.m in Sources */,
+				04560F481DFFF08A00B5876D /* ZCEmotionTextView.m in Sources */,
 				04D317751DDD8A6E008FE97C /* ZCNewFeatureViewController.m in Sources */,
 				04EF94C41DD964B600E65FE5 /* ZCNavigationController.m in Sources */,
 				04EF94BD1DD9606F00E65FE5 /* main.m in Sources */,
@@ -891,6 +923,7 @@
 				04B0D5BE1DF954160050002F /* ZCEmotionsPageView.m in Sources */,
 				7AEE2E861DE9D9610062F019 /* NSDate+ZCExtension.m in Sources */,
 				043DE3141DE68803008F4267 /* ZCStatusFrame.m in Sources */,
+				04D58C9E1DFE98CB009D3C92 /* ZCEmotionPopView.m in Sources */,
 				7A9F9B511DDB5174006FF9CF /* ZCDrawDownMenu.m in Sources */,
 				043DE3171DE689A2008F4267 /* ZCStatusCell.m in Sources */,
 				04539C881DEC309B00DE1C89 /* ZCPhotoImageView.m in Sources */,
@@ -906,6 +939,7 @@
 				04182E761DFA48C400A8D7DD /* NSString+Emoji.m in Sources */,
 				7AD004D91DDF3C83008948F7 /* ZCUserAccount.m in Sources */,
 				04EF94CA1DD9663100E65FE5 /* UIView+ZCExtension.m in Sources */,
+				04D58CA31DFE9A68009D3C92 /* ZCEmotionButton.m in Sources */,
 				043F52E81DED7158003764D7 /* ZCIconImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1056,7 +1090,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3290dc92-5059-41d6-890c-e86c830edca2";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -1076,7 +1110,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3290dc92-5059-41d6-890c-e86c830edca2";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
