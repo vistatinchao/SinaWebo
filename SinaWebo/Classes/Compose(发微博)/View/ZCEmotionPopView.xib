@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,27 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="64" height="91"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticon_keyboard_magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="c1p-Hu-hAt">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoticon_keyboard_magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="c1p-Hu-hAt">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="91"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-eD-lZS" customClass="ZCEmotionButton">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-eD-lZS" customClass="ZCEmotionButton">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="8NU-9B-YGx"/>
-                        <constraint firstAttribute="width" constant="64" id="JYp-6s-X8u"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="c1p-Hu-hAt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3VF-gc-RuE"/>
-                <constraint firstAttribute="trailing" secondItem="c1p-Hu-hAt" secondAttribute="trailing" id="8D1-ku-uRd"/>
-                <constraint firstItem="7ly-eD-lZS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DgR-O7-Tul"/>
-                <constraint firstItem="c1p-Hu-hAt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EOE-um-ATh"/>
-                <constraint firstAttribute="bottom" secondItem="c1p-Hu-hAt" secondAttribute="bottom" id="J7Y-15-cFJ"/>
-                <constraint firstItem="7ly-eD-lZS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tSP-Fi-Mz2"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -47,4 +37,9 @@
     <resources>
         <image name="emoticon_keyboard_magnifier" width="64" height="91"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

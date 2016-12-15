@@ -21,10 +21,11 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self addDeleteBtn];
+        [self addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
     }
     return self;
 }
-#warning todo  还有默认图片进来不出来 以及启动页面问题
+
 - (void)setEmotions:(NSArray *)emotions
 {
     _emotions = emotions;
@@ -47,30 +48,73 @@
     [delBtn addTarget:self action:@selector(clickDelBtn) forControlEvents:UIControlEventTouchUpInside];
     self.deleteBtn = delBtn;
 }
-#warning  todo
+
 - (void)clickDelBtn
 {
-    ZCLogFunc;
+    [ZCNotiCenter postNotificationName:ZCNotificationDidClickDeleteEmotionBtn object:nil userInfo:nil];
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)gesture
+{
+    // 获取手势长按的坐标
+    CGPoint pressPoint = [gesture locationInView:gesture.view];
+    ZCEmotionButton *btn = [self emotionBtnWithLocation:pressPoint];
+    switch (gesture.state) {
+        case UIGestureRecognizerStateBegan:
+        case  UIGestureRecognizerStateChanged:{
+            [self.popView showPopViewInBtn:btn];
+            break;
+        }
+        case UIGestureRecognizerStateCancelled:
+        case  UIGestureRecognizerStateEnded:{  // 发通知
+            [self.popView removeFromSuperview];
+            if (btn) {
+                [self postTextViewDidSelectemotionBtn:btn];
+            }
+            break;
+        }
+
+        default:
+            break;
+    }
 }
 
 - (void)showPopView:(ZCEmotionButton *)btn
 {
-    UIWindow *window = [UIApplication sharedApplication].windows.lastObject; //显示到最后一个window
-    [window addSubview:self.popView];
-    self.popView.emotion = btn.emotion;
-
-    // 相对应窗口的frame
-    CGRect btnNewFrame = [btn convertRect:btn.bounds toView:nil];
-    self.popView.y = CGRectGetMidY(btnNewFrame) - self.popView.height;
-    self.popView.x = btnNewFrame.origin.x-ZCEmotionListViewInsetPadding;
+    [self.popView showPopViewInBtn:btn];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.popView removeFromSuperview];
     });
 
     // 发通知textView显示表情
+    [self postTextViewDidSelectemotionBtn:btn];
+}
+
+/**
+ 根据长按的坐标点找到对应的表情按钮
+ */
+- (ZCEmotionButton *)emotionBtnWithLocation:(CGPoint)point
+{
+     NSUInteger count = self.emotions.count;
+    for (NSInteger i=0; i<count; i++) {
+        ZCEmotionButton *btn = self.subviews[i+1];
+        if (CGRectContainsPoint(btn.frame, point)) {  // 手势长按的坐标在btn范围内
+            [self.popView showPopViewInBtn:btn];
+            return btn;
+        }
+    }
+    return nil;
+}
+#pragma mark 选中的表情发通知给textview
+- (void)postTextViewDidSelectemotionBtn:(ZCEmotionButton *)btn
+{
+    // 保存表情到最近表情
+    [ZCUtility saveRecentEmotion:btn.emotion];
     NSDictionary *emotionDict = [NSDictionary dictionaryWithObject:btn.emotion forKey:ZCKeyNotificationDidShowEmotion];
     [ZCNotiCenter postNotificationName:ZCNotificationDidShowEmotion object:nil userInfo:emotionDict];
+
+
 }
 
 - (ZCEmotionPopView *)popView
@@ -101,9 +145,9 @@
     }
 
     // 设置deleteBtnframe
-    self.deleteBtn.width = btnW;
-    self.deleteBtn.height = btnH;
-    self.deleteBtn.x = self.width-btnInset-btnW;
+    self.deleteBtn.width = btnW+btnInset;
+    self.deleteBtn.height = btnH+btnInset;
+    self.deleteBtn.x = self.width-btnInset-self.deleteBtn.width;
     self.deleteBtn.y = self.height-btnH;
 }
 

@@ -18,6 +18,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    self.emotionPopBtn.contentMode = UIViewContentModeCenter;
 }
 
 + (instancetype)popView
@@ -25,10 +26,21 @@
     return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self) owner:nil options:nil]lastObject];
 }
 
-- (void)setEmotion:(ZCEmotion *)emotion
+
+- (void)showPopViewInBtn:(ZCEmotionButton *)btn
 {
-    _emotion = emotion;
-    self.emotionPopBtn.emotion = emotion;
+    if (btn==nil) {
+        return;
+    }
+    UIWindow *window = [UIApplication sharedApplication].windows.lastObject; //显示到最后一个window
+    [window addSubview:self];
+    self.emotionPopBtn.emotion = btn.emotion;
+
+    // 相对应窗口的frame
+    CGRect btnNewFrame = [btn convertRect:btn.bounds toView:nil];
+    self.y = CGRectGetMidY(btnNewFrame) - self.height;
+   //self.x = btnNewFrame.origin.x-ZCEmotionListViewInsetPadding;
+    self.centerX = CGRectGetMidX(btn.frame);
 }
 
 

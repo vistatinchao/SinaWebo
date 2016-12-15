@@ -30,16 +30,30 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self addSubview];
+        // textView显示表情
+        [ZCNotiCenter addObserver:self selector:@selector(updateRecentEmotion) name:ZCNotificationDidShowEmotion object:nil];
     }
     return self;
 }
 
+
+- (void)updateRecentEmotion
+{
+    self.recentListView.emotions = [ZCUtility readRecentEmotion];
+
+}
+
+- (void)dealloc
+{
+    [ZCNotiCenter removeObserver:self];
+}
 
 - (ZCEmotionListView *)recentListView
 {
     if (!_recentListView) {
         _recentListView = [[ZCEmotionListView alloc]init];
     }
+
     return _recentListView;
 }
 
@@ -79,10 +93,6 @@
     [self addSubview:toolbar];
     toolbar.delegate = self;
     self.toolbar = toolbar;
-
-    ZCEmotionListView *showingListView = [[ZCEmotionListView alloc]init];
-    [self addSubview: showingListView];
-    self.showingListView = showingListView;
 }
 
 - (void)emotionToolbar:(ZCEmotionToolbar *)emotionToolbar didClickBtnType:(ZCEmotionToolbarButtonType)btnType
@@ -92,6 +102,7 @@
     switch (btnType) {
         case ZCEmotionToolbarButtonRecent:{
             [self addSubview:self.recentListView];
+            [self updateRecentEmotion];
             break;
         }
         case ZCEmotionToolbarButtonDefault:{

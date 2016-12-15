@@ -78,4 +78,7 @@ UIKIT_EXTERN NSString *const ZCNotificationDidShowEmotion;
  显示表情通知Key
  */
 UIKIT_EXTERN NSString *const ZCKeyNotificationDidShowEmotion;
-
+/**
+ 删除表情通知
+ */
+UIKIT_EXTERN NSString *const ZCNotificationDidClickDeleteEmotionBtn;

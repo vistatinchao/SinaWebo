@@ -7,8 +7,19 @@
 //
 
 #import "ZCUtility.h"
+#import "ZCEmotion.h"
 #define Path [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.archive"]
+#define RecentEmotionPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"emotion.archive"]
+static NSMutableArray *_emotions;
 @implementation ZCUtility
+
++ (void)initialize
+{
+    _emotions = (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithFile:RecentEmotionPath];
+    if (_emotions==nil) {
+        _emotions = [NSMutableArray array];
+    }
+}
 
 + (void)writeToFile:(id)object forKey:(NSString *)key
 {
@@ -21,12 +32,13 @@
 {
     return [[NSUserDefaults standardUserDefaults]objectForKey:key];
 }
-
+#pragma mark 读取用户信息
 +(void)saveUserAccount:(ZCUserAccount *)user
 {
     [NSKeyedArchiver archiveRootObject:user toFile:Path];
 }
 
+#pragma mark 保存用户信息
 +(ZCUserAccount *)readUserAccount
 {
     ZCUserAccount *user = [NSKeyedUnarchiver unarchiveObjectWithFile:Path];
@@ -40,4 +52,25 @@
     }
     return user;
 }
+#pragma mark 保存最近表情数组
++(void)saveRecentEmotion:(ZCEmotion *)emotion
+{
+
+    // shanchuchongfu
+    for (ZCEmotion *emotionModel in _emotions) {
+        if ([emotionModel.png isEqualToString:emotion.png]||[emotionModel.code isEqualToString:emotion.code]) {
+            [_emotions removeObject:emotionModel];
+            break;
+        }
+    }
+    [_emotions insertObject:emotion atIndex:0];
+    [NSKeyedArchiver archiveRootObject:_emotions toFile:RecentEmotionPath];
+}
+
+#pragma mark 读取最近表情数组
++ (NSArray *)readRecentEmotion
+{
+    return _emotions;
+}
+
 @end

@@ -30,12 +30,23 @@
             // 设置字体
             [attributedText addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedText.length)];
         }];
-
-//        // 设置字体
-//        NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithAttributedString:self.attributedText];
-//        [text addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, text.length)];
     }
 
+}
+
+- (NSString *)fullText
+{
+    NSMutableString *fullText = [NSMutableString string];
+    [self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(NSDictionary<NSString *,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
+        NSAttributedString *text = [self.attributedText attributedSubstringFromRange:range];
+        if (attrs[@"NSAttachment"]) { //是带有属性的字符串
+            ZCEmotionAttachment *attach = attrs[@"NSAttachment"];
+            [fullText appendString:attach.emotion.chs];
+        }else{
+            [fullText appendString:text.string];
+        }
+    }];
+    return fullText;
 }
 
 @end

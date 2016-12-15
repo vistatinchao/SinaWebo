@@ -38,6 +38,7 @@
     // add pagecontroller
     UIPageControl *page = [[UIPageControl alloc]init];
     [self addSubview:page];
+    page.hidesForSinglePage = YES;
     page.userInteractionEnabled = NO;
     [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_normal"] forKeyPath:@"pageImage"];
     [page setValue:[UIImage imageNamed:@"compose_keyboard_dot_selected"]forKeyPath:@"currentPageImage"];
@@ -49,6 +50,7 @@
     _emotions = emotions;
     NSUInteger pageMaxCount = ZCEmotionListViewPageMaxCount;// 每一页的最大个数
     NSUInteger pages = (emotions.count+pageMaxCount-1)/pageMaxCount;// 有多少页
+    [self.scrollview.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     for (NSInteger i=0;i<pages ; i++) {
         ZCEmotionsPageView *pageView = [[ZCEmotionsPageView alloc]init];
         [self.scrollview addSubview:pageView];

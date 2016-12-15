@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ZCEmotion;
+@class ZCEmotion,ZCEmotionButton;
 @interface ZCEmotionPopView : UIView
 
 @property (nonatomic,strong)ZCEmotion *emotion;
 
 +(instancetype)popView;
+
+- (void)showPopViewInBtn:(ZCEmotionButton *)btn;
+
 @end

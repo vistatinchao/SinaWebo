@@ -12,4 +12,9 @@
 
 - (void)insertEmotion:(ZCEmotion *)emotion;
 
+/**
+ 把图片转化为字符串
+ */
+- (NSString *)fullText;
+
 @end

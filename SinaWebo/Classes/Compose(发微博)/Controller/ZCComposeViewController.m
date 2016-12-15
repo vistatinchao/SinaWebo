@@ -22,6 +22,11 @@
 @property (nonatomic,weak)ZCComposePhotoView *photoView;
 @property (nonatomic,strong)ZCEmotionKeyboard *emotionKeyboardView;
 
+/**
+ 是否正在显示表情键盘 控制表情栏
+ */
+@property (nonatomic,assign)BOOL showEmotionKeyboard;
+
 @end
 
 @implementation ZCComposeViewController
@@ -68,10 +73,13 @@
     toolbar.frame = CGRectMake(0, ZCScreenH, ZCScreenW, toolbar.height);
     toolbar.delegate = self;
     self.toolbar = toolbar;
+    // 文字改变的通知
+    [ZCNotiCenter addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self.textView];
     // 监听键盘
     [ZCNotiCenter addObserver:self selector:@selector(changeToolbarFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
      // textView显示表情
     [ZCNotiCenter addObserver:self selector:@selector(showEmotion:) name:ZCNotificationDidShowEmotion object:nil];
+    [ZCNotiCenter addObserver:self selector:@selector(clickDeleteBtn) name:ZCNotificationDidClickDeleteEmotionBtn object:nil];
 }
 #pragma mark 懒加载view
 - (ZCComposePhotoView *)photoView
@@ -154,7 +162,7 @@
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [ZCUtility readUserAccount].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     [[ZCAFHttpsRequest share]PostRequestWithUrl:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -169,7 +177,7 @@
 
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [ZCUtility readUserAccount].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     UIImage *image = self.photoView.photoArr.lastObject;
     ZCUploadImageParam *imageParam = [[ZCUploadImageParam alloc]init];
     imageParam.data = UIImageJPEGRepresentation(image, 1.0);
@@ -191,6 +199,9 @@
  */
 - (void)changeToolbarFrame:(NSNotification *)noti
 {
+    if (self.showEmotionKeyboard) {
+        return;
+    }
     CGFloat duration = [noti.userInfo[@"UIKeyboardAnimationDurationUserInfoKey"] floatValue];
     CGRect keyboardRect = [noti.userInfo[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
     // 执行动画
@@ -214,6 +225,15 @@
 {
     ZCEmotion *emotion = noti.userInfo[ZCKeyNotificationDidShowEmotion];
     [self.textView insertEmotion:emotion];
+    // 很关键 第一次点击图片表情不然监听不到
+    [self textDidChange];
+}
+/**
+ * 删除表情
+ */
+- (void)clickDeleteBtn
+{
+    [self.textView deleteBackward];
 }
 #pragma mark toolbar delegate
 - (void)composeToolbar:(ZCComposeToolbar *)toolbar didClickBtnType:(ZCComposeToolbarBtnType)btnType
@@ -243,12 +263,16 @@
 - (void)switchKeyboard:(ZCComposeToolbar *)toolbar
 {
     toolbar.showEmotionKeyboard = !toolbar.showEmotionKeyboard;
-    [self.textView resignFirstResponder];
     if (toolbar.showEmotionKeyboard) {// 切换表情键盘
         self.textView.inputView = self.emotionKeyboardView;
     }else{
         self.textView.inputView = nil;
     }
+    self.showEmotionKeyboard = YES;
+
+    [self.textView resignFirstResponder];
+
+    self.showEmotionKeyboard = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView becomeFirstResponder];
     });
@@ -322,9 +346,9 @@
 
 #pragma mark textView delegate
 
-- (void)textViewDidChange:(UITextView *)textView
+- (void)textDidChange
 {
-    self.navigationItem.rightBarButtonItem.enabled = textView.hasText;
+    self.navigationItem.rightBarButtonItem.enabled = self.textView.fullText.length;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

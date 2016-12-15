@@ -77,3 +77,7 @@ NSString *const ZCNotificationDidShowEmotion = @"ZCNotificationDidShowEmotion";
  显示表情通知Key
  */
 NSString *const ZCKeyNotificationDidShowEmotion = @"ZCKeyNotificationDidShowEmotion";
+/**
+ 删除表情通知
+ */
+NSString *const ZCNotificationDidClickDeleteEmotionBtn = @"ZCNotificationDidClickDeleteEmotionBtn";
